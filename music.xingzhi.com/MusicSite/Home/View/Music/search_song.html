@@ -1,0 +1,120 @@
+<include file="Public:header" title="音乐站点" />
+<style type="text/css">
+.songfram {
+	width: 1300px;
+	margin: 0 auto;
+}
+
+.songfram .tit {
+	overflow: hidden;
+	line-height: 35px;
+	font-weight: bold;
+}
+
+.songfram .list {
+	overflow: hidden;
+	line-height: 35px;
+}
+
+.songfram .f1 {
+	float: left;
+	width: 225px;
+}
+
+.songfram .f2 {
+	float: left;
+	width: 500px;
+}
+</style>
+</head>
+<body>
+	<include file="Public:top_nav" title="音乐站点" />
+	<div class="small_nav">
+		<a href="/">首页</a> &gt; 检索
+	</div>
+	<div class="select_type">
+		<include file="Public:select_area" />
+	</div>
+	<div class="picframe">
+		<div class="parea" id="contlist">
+			<div class="songfram">
+				<ul class="tit">
+					<li class="f2">歌曲</li>
+					<li class="f1">歌手</li>
+					<li class="f1">专辑</li>
+					<li class="f1">&nbsp;</li>
+				</ul>
+				<ul class="list" id="songlist"></ul>
+			</div>
+		</div>
+	</div>
+	<div id="pageArea"></div>
+	<input type="hidden" value="0" id="hidPage" />
+	<script type="text/javascript">
+    //限制只能打开一个播放页面
+    function open_song(songid) {
+        another = open('/music/song?sid=' + songid, 'play');
+    }
+    function get_song(vindex, vrows) {
+        var keys = unescape("{$key}");
+        $("#search").val(keys);
+        $.ajax("/apimusic/search_song", {
+            data: {index: vindex, rows: vrows, key: keys},
+            async: false,
+            dataType: "jsonp",
+            jsonp: "callback",
+            crossDomain: true,
+            success: function (json) {
+                $('#songlist').html("");
+                var shtml = "";
+                $.each(json.result, function (i, k) {
+                    var isplay = false;
+                    if (k.filetype === 'mp3' || k.filetype === 'm4a') {
+                        isplay = true;
+                    }
+                    if (isplay) {
+                        if (k.notes === null || k.notes === '') {
+                            shtml += '<li class="f2"><a href="javascript:;" onclick="open_song(' + k.id + ')"><span title="' + k.songname + '">' + k.songname + '&nbsp;</span></a> <span style="color:#AFADA3">(' + k.listentime + ')</span></li>';
+                        } else {
+                            shtml += '<li class="f2"><a href="javascript:;" onclick="open_song(' + k.id + ')"><span title="' + k.songname + '">' + k.songname + '&nbsp;</span></a> <span style="color:#AFADA3"> (' + k.listentime + ') | (' + k.notes + ')</span></li>';
+                        }
+                    } else {
+                        shtml += '<li class="f2">' + k.songname + '&nbsp;</span></li>';
+                    }
+
+                    if (k.feat === '' || k.feat === null)
+                        shtml += '<li class="f1"><a href="/music/albumn_list?sid=' + k.singerid + '" style="color:#31c27c">' + k.singername + '</a>&nbsp;</li>';
+                    else
+                        shtml += '<li class="f1"><a href="/music/albumn_list?sid=' + k.singerid + '" style="color:#31c27c">' + k.singername + '</a>/' + k.feat + '&nbsp;</li>';
+
+                    shtml += '<li class="f1"><a href="/music/songlist?sid=' + k.singerid + '&aid=' + k.albumnid + '" title="' + k.albumname + '">' + k.albumname + '&nbsp;</a></li>';
+                    //shtml += '<li class="f1"><span title="' + k.byword + '">' + Xingzhi.paging.cut_str(k.byword, 10) + '&nbsp;</span></li>';
+                    //if (isplay) {
+                    //    shtml += '<li class="f1"> <a href="/music/editsong?songid=' + k.id + '" class="popup-edit">编辑</a> | <a href="javascript:;" onclick="open_song(' + k.id + ')">去听</a> | <a href="javascript:;">删除</a> </li>';
+                    //} else {
+                    //    shtml += '<li class="f1"> <a href="/music/editsong?songid=' + k.id + '" class="popup-edit">编辑</a></li>';
+                    //}
+                });
+                //alert(json.total);
+                $('#songlist').html(shtml);
+
+                Xingzhi.paging.show_page(json.total, vindex, vrows, '#pageArea', 'get_song');
+                $("#hidPage").val(vindex);
+
+                //Xingzhi.initmagnificPopup.iframeLoad('.popup-edit');
+
+            },
+            error: function (e) {
+                console.log('Error...' + e.message);
+            }
+        });
+    }
+    $(function () {
+        get_song(0, 20);
+    });
+
+</script>
+
+	<include file="Public:foot" syear="2007" eyear="2017" />
+</body>
+</html>

@@ -1,0 +1,79 @@
+[ 2018-03-23T08:44:57+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007122s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.1918s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0023s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0653s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000281s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.163562s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.163713s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002063s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002171s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.019051s ]
+
+[ 2018-03-23T08:44:57+08:00 ] 127.0.0.1 /apimusic/get_hot_song?callback=jQuery1102014095242034606925_1521765897564&index=0&rows=15&_=1521765897565
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0009s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.listentime DESC LIMIT 15 [ RunTime:0.0559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000857s ]
+
+[ 2018-03-23T08:44:57+08:00 ] 127.0.0.1 /apimusic/get_byword?callback=jQuery1102014095242034606925_1521765897570&index=0&rows=15&_=1521765897571
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0008s ]
+SQL: SELECT byword, COUNT(0) as total FROM song WHERE byword != '' GROUP BY byword ORDER BY total DESC LIMIT 0, 15 [ RunTime:0.0162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2018-03-23T08:44:58+08:00 ] 127.0.0.1 /apimusic/get_record_song?callback=jQuery1102014095242034606925_1521765897568&index=0&rows=15&_=1521765897569
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0008s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000665s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000699s ]
+
+[ 2018-03-23T08:44:58+08:00 ] 127.0.0.1 /apimusic/get_new_song?callback=jQuery1102014095242034606925_1521765897566&index=0&rows=15&_=1521765897567
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0006s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.id DESC LIMIT 0, 15 [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000821s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+

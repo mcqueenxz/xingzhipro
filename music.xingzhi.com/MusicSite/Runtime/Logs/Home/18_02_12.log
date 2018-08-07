@@ -1,0 +1,1742 @@
+[ 2018-02-12T20:41:12+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000869s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027407s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027456s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018295s ]
+
+[ 2018-02-12T20:41:12+08:00 ] 127.0.0.1 /apimusic/get_hot_song?callback=jQuery110205935779256861553_1518439272533&index=0&rows=15&_=1518439272534
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.listentime DESC LIMIT 15 [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000644s ]
+
+[ 2018-02-12T20:41:12+08:00 ] 127.0.0.1 /apimusic/get_new_song?callback=jQuery110205935779256861553_1518439272535&index=0&rows=15&_=1518439272536
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.id DESC LIMIT 0, 15 [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000704s ]
+
+[ 2018-02-12T20:41:12+08:00 ] 127.0.0.1 /apimusic/get_byword?callback=jQuery110205935779256861553_1518439272539&index=0&rows=15&_=1518439272540
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0162s ]
+SQL: SELECT byword, COUNT(0) as total FROM song WHERE byword != '' GROUP BY byword ORDER BY total DESC LIMIT 0, 15 [ RunTime:0.0033s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000604s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000639s ]
+
+[ 2018-02-12T20:41:12+08:00 ] 127.0.0.1 /apimusic/get_record_song?callback=jQuery110205935779256861553_1518439272537&index=0&rows=15&_=1518439272538
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2018-02-12T20:41:14+08:00 ] 127.0.0.1 /music/song
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+NOTIC: [8] Undefined variable: songurl D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\8b5c046d47b69012df43b9b33a3fd750.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016987s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2018-02-12T20:41:14+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111101471413737340408_1518439274764&sid=&songtype=1&_=1518439274765
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0293s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 104 [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2018-02-12T20:41:15+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+
+[ 2018-02-12T20:41:15+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=104
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 104 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('104','Taikatalvi','Nightwish','2018-02-12 20:41:14.000000') [ RunTime:0.0016s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000582s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2018-02-12T20:41:16+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111101471413737340408_1518439274764&songtype=1&_=1518439274766
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0271s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 670 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000590s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2018-02-12T20:41:17+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=670
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 670 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 5 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('670','千金一刻','张学友','2018-02-12 20:41:16.000000') [ RunTime:0.0014s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1543s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2018-02-12T20:41:23+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005685s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005730s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2018-02-12T20:41:23+08:00 ] 127.0.0.1 /apimusic/get_hot_song?callback=jQuery110208897416455814422_1518439283569&index=0&rows=15&_=1518439283570
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000665s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2018-02-12T20:41:23+08:00 ] 127.0.0.1 /apimusic/get_record_song?callback=jQuery110208897416455814422_1518439283573&index=0&rows=15&_=1518439283574
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000520s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000573s ]
+
+[ 2018-02-12T20:41:23+08:00 ] 127.0.0.1 /apimusic/get_new_song?callback=jQuery110208897416455814422_1518439283571&index=0&rows=15&_=1518439283572
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0028s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.id DESC LIMIT 0, 15 [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2018-02-12T20:41:23+08:00 ] 127.0.0.1 /apimusic/get_byword?callback=jQuery110208897416455814422_1518439283575&index=0&rows=15&_=1518439283576
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0029s ]
+SQL: SELECT byword, COUNT(0) as total FROM song WHERE byword != '' GROUP BY byword ORDER BY total DESC LIMIT 0, 15 [ RunTime:0.0033s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000668s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2018-02-12T20:41:24+08:00 ] 127.0.0.1 /music/song?sid=104
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8] Undefined variable: songurl D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\8b5c046d47b69012df43b9b33a3fd750.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006589s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006639s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000727s ]
+
+[ 2018-02-12T20:41:25+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&sid=104&songtype=1&_=1518439284969
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE song.id = 104 [ RunTime:0.0004s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 104 [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000777s ]
+
+[ 2018-02-12T20:41:25+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=104
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0028s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 104 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('104','Taikatalvi','Nightwish','2018-02-12 20:41:25.000000') [ RunTime:0.0014s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1431s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2018-02-12T20:41:27+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284970
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0292s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1200 [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000719s ]
+
+[ 2018-02-12T20:41:27+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1200
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1200 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 5 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0031s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1200','二分之一的幸福','张学友','2018-02-12 20:41:27.000000') [ RunTime:0.0040s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1546s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2018-02-12T20:41:29+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000713s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006096s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006142s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000648s ]
+
+[ 2018-02-12T20:41:29+08:00 ] 127.0.0.1 /apimusic/get_new_song?callback=jQuery11020053793804962970926_1518439289597&index=0&rows=15&_=1518439289598
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.id DESC LIMIT 0, 15 [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000725s ]
+
+[ 2018-02-12T20:41:29+08:00 ] 127.0.0.1 /apimusic/get_byword?callback=jQuery11020053793804962970926_1518439289601&index=0&rows=15&_=1518439289602
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SELECT byword, COUNT(0) as total FROM song WHERE byword != '' GROUP BY byword ORDER BY total DESC LIMIT 0, 15 [ RunTime:0.0035s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000756s ]
+
+[ 2018-02-12T20:41:29+08:00 ] 127.0.0.1 /apimusic/get_hot_song?callback=jQuery11020053793804962970926_1518439289595&index=0&rows=15&_=1518439289596
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000839s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+
+[ 2018-02-12T20:41:29+08:00 ] 127.0.0.1 /apimusic/get_record_song?callback=jQuery11020053793804962970926_1518439289599&index=0&rows=15&_=1518439289600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2018-02-12T20:45:45+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284971
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001455s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0066s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0386s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2940 [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2018-02-12T20:45:45+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=2940
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0030s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 2940 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0029s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('2940','无声的信笺','谭咏麟','2018-02-12 20:45:45.000000') [ RunTime:0.0041s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000720s ]
+
+[ 2018-02-12T20:48:29+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284972
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0267s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1812 [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000621s ]
+
+[ 2018-02-12T20:48:29+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1812
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0029s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1812 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 6 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0030s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1812','男人的好','张宇','2018-02-12 20:48:29.000000') [ RunTime:0.0016s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1361s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000580s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2018-02-12T20:52:21+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284973
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0285s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2704 [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2018-02-12T20:52:21+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=2704
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 2704 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 90 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0027s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('2704','浪潮','陈百强','2018-02-12 20:52:21.000000') [ RunTime:0.0015s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000627s ]
+
+[ 2018-02-12T20:55:43+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284974
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0289s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1012 [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000673s ]
+
+[ 2018-02-12T20:55:43+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1012
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1012 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0032s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1012','秋意中等我','刘德华','2018-02-12 20:55:43.000000') [ RunTime:0.0015s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1352s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2018-02-12T20:59:33+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284975
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0284s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2625 [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000608s ]
+
+[ 2018-02-12T20:59:33+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=2625
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 2625 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 73 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0031s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('2625','女人何苦为难女人','幸晓琪','2018-02-12 20:59:33.000000') [ RunTime:0.0014s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000546s ]
+
+[ 2018-02-12T21:04:23+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284976
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0277s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1500 [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2018-02-12T21:04:23+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1500
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1500 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 53 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0030s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1500','浪漫手牵手','任贤齐','2018-02-12 21:04:23.000000') [ RunTime:0.0040s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2018-02-12T21:08:57+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284977
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001187s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0029s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0268s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3397 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2018-02-12T21:08:57+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=3397
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0030s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 3397 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 45 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0029s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('3397','我等不到你','黎明','2018-02-12 21:08:57.000000') [ RunTime:0.0040s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000544s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000586s ]
+
+[ 2018-02-12T21:13:19+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284978
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0446s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 33 [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000651s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2018-02-12T21:13:19+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=33
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0046s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 33 [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 5 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0059s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('33','还是觉得你最好','张学友','2018-02-12 21:13:19.000000') [ RunTime:0.0016s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2018-02-12T21:18:41+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284968&songtype=1&_=1518439284979
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0030s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0270s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1183 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000680s ]
+
+[ 2018-02-12T21:18:41+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1183
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1183 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 18 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0027s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1183','你需要多少的自由','那英','2018-02-12 21:18:41.000000') [ RunTime:0.0040s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1614s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000680s ]
+
+[ 2018-02-12T21:18:41+08:00 ] 127.0.0.1 /apimusic/set_song_duration?callback=jQuery111106495983979477455_1518439284968&sid=1183&tims=NaN&_=1518439284980
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'NaN' in 'field list'
+
+[ 2018-02-12T21:24:07+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284981&songtype=1&_=1518439284982
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0271s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1524 [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000649s ]
+
+[ 2018-02-12T21:24:07+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1524
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1524 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 42 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0027s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1524','我想偷偷对你说我爱你','郭富城','2018-02-12 21:24:07.000000') [ RunTime:0.0015s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2018-02-12T21:27:51+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284981&songtype=1&_=1518439284983
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0030s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0278s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1236 [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2018-02-12T21:27:51+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1236
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1236 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0028s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1236','顺其自然','刘德华','2018-02-12 21:27:51.000000') [ RunTime:0.0039s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000690s ]
+
+[ 2018-02-12T21:32:17+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106495983979477455_1518439284981&songtype=1&_=1518439284984
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0274s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3158 [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000645s ]
+
+[ 2018-02-12T21:32:17+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=3158
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0029s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 3158 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 46 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0027s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('3158','钟情是你','温兆伦','2018-02-12 21:32:17.000000') [ RunTime:0.0014s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1551s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2018-02-12T21:34:12+08:00 ] 127.0.0.1 /music/album_lib
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000347s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.438954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.439069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001757s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002424s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002572s ]
+
+[ 2018-02-12T21:34:12+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110202275833664290472_1518442452083&index=0&rows=20&year=0&_=1518442452084
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0040s ]
+SQL: select a.* from singeralbum a where 1=1  ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0006s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where 1=1  ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2018-02-12T21:34:15+08:00 ] 127.0.0.1 /music/search_song?key=Taikatalvi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+
+[ 2018-02-12T21:34:15+08:00 ] 127.0.0.1 /apimusic/search_song?callback=jQuery110208805336376853197_1518442455625&index=0&rows=20&key=Taikatalvi&_=1518442455626
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SELECT a.id,a.singerid,a.albumnid,a.songname,a.byword,a.bymusic,a.bianqu,a.path,a.feat,a.notes,a.filetype,a.listentime, b.singername, c.albumname, c.thumbnail FROM song a INNER JOIN singer b ON b.id = a.singerid INNER JOIN singeralbum c ON c.id = a.albumnid WHERE b.singername LIKE '%Taikatalvi%' OR a.songname LIKE '%Taikatalvi%' OR a.byword LIKE '%Taikatalvi%' OR a.bymusic LIKE '%Taikatalvi%' OR a.bianqu LIKE '%Taikatalvi%' ORDER BY a.listentime DESC LIMIT 0, 20 [ RunTime:0.0091s ]
+SQL: SELECT count(0) as 'total' FROM song a INNER JOIN singer b ON b.id = a.singerid INNER JOIN singeralbum c ON c.id = a.albumnid WHERE b.singername LIKE '%Taikatalvi%' OR a.songname LIKE '%Taikatalvi%' OR a.byword LIKE '%Taikatalvi%' OR a.bymusic LIKE '%Taikatalvi%' OR a.bianqu LIKE '%Taikatalvi%' [ RunTime:0.0034s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000752s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+
+[ 2018-02-12T21:34:17+08:00 ] 127.0.0.1 /music/albumn_list?sid=13
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018649s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018691s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2018-02-12T21:34:17+08:00 ] 127.0.0.1 /apimusic/get_album_list?callback=jQuery1102019082201362614604_1518442457025&sid=13&_=1518442457026
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+NOTIC: [8] Undefined index: index D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: rows D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `singeralbum` WHERE ( singerid = 13 ) ORDER BY issueyear desc  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000778s ]
+
+[ 2018-02-12T21:34:18+08:00 ] 127.0.0.1 /music/songlist?sid=13&aid=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `singeralbum` WHERE (  id = 14 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015034s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000637s ]
+
+[ 2018-02-12T21:34:18+08:00 ] 127.0.0.1 /apimusic/get_song_list?callback=jQuery110202821925863633432_1518442458323&aid=14&_=1518442458324
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `song` WHERE ( albumnid = 14 )  [ RunTime:0.0039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2018-02-12T21:34:20+08:00 ] 127.0.0.1 /apimusic/get_album_list?callback=jQuery110209281029952565116_1518442460093&sid=13&_=1518442460094
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+NOTIC: [8] Undefined index: index D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: rows D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `singeralbum` WHERE ( singerid = 13 ) ORDER BY issueyear desc  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000702s ]
+
+[ 2018-02-12T21:34:21+08:00 ] 127.0.0.1 /apimusic/search_song?callback=jQuery110208643772074809808_1518442461694&index=0&rows=20&key=Taikatalvi&_=1518442461695
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SELECT a.id,a.singerid,a.albumnid,a.songname,a.byword,a.bymusic,a.bianqu,a.path,a.feat,a.notes,a.filetype,a.listentime, b.singername, c.albumname, c.thumbnail FROM song a INNER JOIN singer b ON b.id = a.singerid INNER JOIN singeralbum c ON c.id = a.albumnid WHERE b.singername LIKE '%Taikatalvi%' OR a.songname LIKE '%Taikatalvi%' OR a.byword LIKE '%Taikatalvi%' OR a.bymusic LIKE '%Taikatalvi%' OR a.bianqu LIKE '%Taikatalvi%' ORDER BY a.listentime DESC LIMIT 0, 20 [ RunTime:0.0088s ]
+SQL: SELECT count(0) as 'total' FROM song a INNER JOIN singer b ON b.id = a.singerid INNER JOIN singeralbum c ON c.id = a.albumnid WHERE b.singername LIKE '%Taikatalvi%' OR a.songname LIKE '%Taikatalvi%' OR a.byword LIKE '%Taikatalvi%' OR a.bymusic LIKE '%Taikatalvi%' OR a.bianqu LIKE '%Taikatalvi%' [ RunTime:0.0036s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2018-02-12T21:34:22+08:00 ] 127.0.0.1 /music/songlist?sid=13&aid=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `singeralbum` WHERE (  id = 14 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006762s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006802s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000642s ]
+
+[ 2018-02-12T21:34:22+08:00 ] 127.0.0.1 /apimusic/get_song_list?callback=jQuery110202797542423877011_1518442462659&aid=14&_=1518442462660
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `song` WHERE ( albumnid = 14 )  [ RunTime:0.0038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000668s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2018-02-12T21:34:27+08:00 ] 127.0.0.1 /apimusic/deletesong
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 104 [ RunTime:0.0005s ]
+SQL: DELETE FROM `song` WHERE ( id = 104 ) [ RunTime:0.0031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000796s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000864s ]
+
+[ 2018-02-12T21:34:28+08:00 ] 127.0.0.1 /apimusic/get_song_list?callback=jQuery110202797542423877011_1518442462659&aid=14&_=1518442462661
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `song` WHERE ( albumnid = 14 )  [ RunTime:0.0036s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2018-02-12T21:34:30+08:00 ] 127.0.0.1 /music/addsong?sid=13&aid=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8] Undefined variable: song D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\d57e3c1a7b6689e4ff53557d1c4c7bdd.php 第 92 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019194s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000494s ]
+
+[ 2018-02-12T21:34:30+08:00 ] 127.0.0.1 /music/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005676s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005712s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000586s ]
+
+[ 2018-02-12T21:34:36+08:00 ] 127.0.0.1 /apimusic/add_song
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+NOTIC: [8] Undefined index: byword D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: bymusic D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: bianqu D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: feat D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: notes D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: songword D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `singeralbum` WHERE (  id = 14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `song` WHERE ( singerid=13 and albumnid=14 and songname='Taikatalvi' )  [ RunTime:0.0061s ]
+SQL: INSERT INTO `song` (`singerid`,`albumnid`,`songname`,`byword`,`bymusic`,`bianqu`,`times`,`songword`,`path`,`filesize`,`filetype`,`feat`,`addtime`,`editortime`,`listentime`,`notes`,`songtype`) VALUES ('13','14','Taikatalvi','','','','0','','/Nightwish/Imaginaerum/Taikatalvi.m4a','1906390','m4a','','2018-02-12 21:34:36.000000','2018-02-12 21:34:36.000000','0','','1') [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000796s ]
+
+[ 2018-02-12T21:34:38+08:00 ] 127.0.0.1 /music/songlist?sid=13&aid=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0048s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `singeralbum` WHERE (  id = 14 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007270s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007310s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000609s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2018-02-12T21:34:38+08:00 ] 127.0.0.1 /apimusic/get_song_list?callback=jQuery110202795506920833981_1518442478045&aid=14&_=1518442478046
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `song` WHERE ( albumnid = 14 )  [ RunTime:0.0039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2018-02-12T21:34:39+08:00 ] 127.0.0.1 /music/song?sid=3565
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+NOTIC: [8] Undefined variable: songurl D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\8b5c046d47b69012df43b9b33a3fd750.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2018-02-12T21:34:39+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106696044458621613_1518442479700&sid=3565&songtype=1&_=1518442479701
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0048s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE song.id = 3565 [ RunTime:0.0005s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3565 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000592s ]
+
+[ 2018-02-12T21:34:39+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=3565
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0046s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 3565 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0037s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('3565','Taikatalvi','Nightwish','2018-02-12 21:34:39.000000') [ RunTime:0.0015s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000569s ]
+
+[ 2018-02-12T21:34:40+08:00 ] 127.0.0.1 /apimusic/set_song_duration?callback=jQuery111106696044458621613_1518442479700&sid=3565&tims=155.550476&_=1518442479702
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: update `song` set `times` = 155.550476 WHERE id = 3565 [ RunTime:0.0021s ]
+NOTIC: [8] Array to string conversion D:\www\phpweb\music.xingzhi.com\MusicSite\Home\Controller\ApimusicController.class.php 第 94 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2018-02-12T21:34:44+08:00 ] 127.0.0.1 /music/song?sid=3565
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+NOTIC: [8] Undefined variable: songurl D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\8b5c046d47b69012df43b9b33a3fd750.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005364s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000473s ]
+
+[ 2018-02-12T21:34:44+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&sid=3565&songtype=1&_=1518442484580
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0053s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE song.id = 3565 [ RunTime:0.0005s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3565 [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2018-02-12T21:34:44+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=3565
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 3565 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 13 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0036s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('3565','Taikatalvi','Nightwish','2018-02-12 21:34:44.000000') [ RunTime:0.0014s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2018-02-12T21:37:21+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&songtype=1&_=1518442484581
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000853s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0051s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0353s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1556 [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2018-02-12T21:37:21+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1556
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1556 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 5 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0041s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1556','初吻','张学友','2018-02-12 21:37:21.000000') [ RunTime:0.0017s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000739s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+
+[ 2018-02-12T21:41:11+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&songtype=1&_=1518442484582
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0292s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2846 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000777s ]
+
+[ 2018-02-12T21:41:11+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=2846
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0049s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 2846 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0040s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('2846','停不了的爱','刘德华','2018-02-12 21:41:11.000000') [ RunTime:0.0015s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000751s ]
+
+[ 2018-02-12T21:45:27+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&songtype=1&_=1518442484583
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001124s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0279s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1322 [ RunTime:0.0041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000684s ]
+
+[ 2018-02-12T21:45:27+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1322
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1322 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 11 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0042s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1322','但愿你了解','王杰','2018-02-12 21:45:27.000000') [ RunTime:0.0042s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000611s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2018-02-12T21:49:27+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&songtype=1&_=1518442484584
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010983s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0100s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0409s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1216 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000933s ]
+
+[ 2018-02-12T21:49:27+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1216
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1216 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 5 )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0070s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1216','你想不想','张学友','2018-02-12 21:49:27.000000') [ RunTime:0.0020s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2018-02-12T21:52:35+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&songtype=1&_=1518442484585
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0300s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 757 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2018-02-12T21:52:35+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=757
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 757 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0042s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('757','魔法爱情','谭咏麟','2018-02-12 21:52:35.000000') [ RunTime:0.0017s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000639s ]
+
+[ 2018-02-12T21:56:51+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&songtype=1&_=1518442484586
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0066s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0346s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1085 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000585s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2018-02-12T21:56:51+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1085
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1085 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 37 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0035s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1085','迷惑我','张国荣','2018-02-12 21:56:51.000000') [ RunTime:0.0016s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2018-02-12T22:01:17+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111106024040938326995_1518442484579&songtype=1&_=1518442484587
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0041s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0448s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 1106 [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000603s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000636s ]
+
+[ 2018-02-12T22:01:17+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=1106
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 1106 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 38 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0076s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('1106','心愿','孙燕姿','2018-02-12 22:01:17.000000') [ RunTime:0.0019s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1377s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000880s ]
+

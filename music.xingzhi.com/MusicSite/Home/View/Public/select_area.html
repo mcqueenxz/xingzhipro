@@ -1,0 +1,19 @@
+<a href="/music/singerlist">歌手</a>
+|
+<a href="/music/album_lib">专辑列表</a>
+|
+<a href="javascript:;" target="_blank" onclick="random_song()">随便听听({$song_total})</a>
+|
+<input type="text" id="search" placeholder="输入歌手/歌曲名称" />
+<a href="javascript:;" id="btnsearch">检索</a>
+
+<script type="text/javascript">
+    $("#btnsearch").click(function(){
+        var key = $("#search").val();
+        window.open("/music/search_song?key=" + escape(key), "_top");
+    });
+    //限制只能打开一个播放页面
+    function random_song() {
+        another = open('/music/song', 'play');
+    }
+</script>

@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/image/x64.ico">
+    <title>{$albumname}专辑歌曲列表</title>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <!--bootstrap主体框架引用.-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <!--弹出层引用-->
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" />
+    <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+    <!--弹层插件-->
+    <link rel="stylesheet" type="text/css" href="/layer/skin/layer.css" />
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script type="text/javascript" src="/layer/extend/layer.ext.js"></script>
+
+    <script type="text/javascript" src="/js/xingzhi.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/commonv1.css" />
+    <style type="text/css">
+        #singler_list { line-height: 2.5rem; }
+        #singler_list li { min-width: 20%; }
+    </style>
+    <style type="text/css">
+        .songfram { margin: 0 auto; }
+        .songfram .tit { overflow: hidden; line-height: 35px; font-weight: bold; }
+        .songfram .list { overflow: hidden; line-height: 35px; }
+    </style>
+</head>
+<body>
+    <div class="text-center top_header">音乐收藏站</div>
+    <div style="padding: 1rem; margin-top: 5rem; padding-bottom: 5rem; overflow: hidden;">
+        <ol class="breadcrumb">
+            <li><a href="/">首页</a></li>
+            <li><a href="/music/singerlist">歌手列表</a></li>
+            <li>
+                <volist name="singer" id="v">
+                    <a href="/music/albumn_list?sid={$v.id}">{$v.singername}专辑</a>
+                </volist>
+            </li>
+            <li class="active">【{$albumname}】歌曲列表</li>
+        </ol>
+        <ul class="list-inline">
+            <li>
+                <a href="/music/addsong?sid={$sid}&aid={$aid}"
+                   class="popup-add btn btn-primary btn-sm" id="search_pro">新增歌曲</a>
+            </li>
+            <li><a class="btn btn-primary btn-sm" href="/music/singerlist">歌手</a></li>
+            <li><a class="btn btn-primary btn-sm" href="/music/album_lib">专辑列表</a></li>
+            <li>
+                <a class="btn btn-primary btn-sm" href="javascript:;"
+                   target="_blank" onclick="random_song()">随便听听({$song_total})</a>
+            </li>
+            <li>
+                <div class="form-group form-inline">
+                    <input type="text" class="form-control input-sm" id="search"
+                           placeholder="输入歌手/歌曲名称" /> <a href="javascript:;"
+                                                         class="btn btn-primary btn-sm" id="btnsearch">检索</a>
+                </div>
+                <script type="text/javascript">
+                    $("#btnsearch").click(function () {
+                        var key = $("#search").val();
+                        window.open("/music/search_song?key=" + escape(key), "_top");
+                    });
+                    //限制只能打开一个播放页面
+                    function random_song() {
+                        another = open('/music/song', 'play');
+                    }
+                </script>
+            </li>
+        </ul>
+
+        <div class="songfram">
+            <table class="table table-condensed">
+                <tr>
+                    <td class="col-sm-2">
+                        <img id="img_thumbnail" style="width: 15rem" src="" class="img-rounded" />
+                    </td>
+                    <td>
+                        <ul class="list-unstyled" style="line-height:2.2rem;">
+                            <li><label>专辑名称:</label> <span id="albumname">-</span></li>
+                            <li><label>发布日期:</label> <span id="issueyear">-</span></li>
+                            <li><label>专辑语言:</label> <span id="languages">-</span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table table-bordered table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">歌曲</th>
+                        <th class="col-md-2">歌手</th>
+                        <th class="col-md-2">作曲</th>
+                        <th class="col-md-2">作词</th>
+                        <th class="col-md-2">编曲</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="songlist">
+                    <!--<tr>
+                        <td>
+                            <a href="javascript:;" onclick="open_song(3835)">
+                                <span title="为明日争气">为明日争气&nbsp;</span>
+                            </a> <span style="color: #939394;">
+                                (电视剧《刑事侦辑档案》主题曲)
+                            </span>
+                        </td>
+                        <td>梁汉文</td>
+                        <td>梁汉文</td>
+                        <td>梁汉文</td>
+                        <td>梁汉文</td>
+                        <td>
+                            <a title="编辑" href="/music/editsong?songid=3835" class="popup-edit btn btn-xs btn-primary">编辑</a>
+                            <a title="删除" href="javascript:;" class="btn btn-xs btn-danger" onclick="deletesong(3835)">删除</a>
+                        </td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //限制只能打开一个播放页面
+        function open_song(songid) {
+            another = open('/music/song?sid=' + songid, 'play');
+        }
+        //删除歌曲信息
+        function deletesong(vsid) {
+            if (confirm('确认删除?不可恢复.')) {
+                $.post("/api/deletesong", { songid: vsid }, function (data) {
+                    var jsonVal = eval("(" + data + ")");
+                    layer.msg(jsonVal.msg);
+                    setTimeout(function () {
+                        get_song();
+                    }, 1000);
+                });
+            }
+        }
+        //获取专辑信息
+        function get_album() {
+            $.ajax("/api/getalbuminfo", {
+                data: { albumId: "{$aid}" },
+                async: false,
+                dataType: "jsonp",
+                crossDomain: true,
+                success: function (json) {
+                    $("#albumname").html(json.result[0].albumname);
+                    $("#issueyear").html(json.result[0].issueyear + "年" + json.result[0].issuemonth + "月");
+                    $("#languages").html((json.result[0].languages == null) ? "-" : json.result[0].languages);
+                    $("#img_thumbnail").attr("src", "{$IMGDOMAIN}" + json.result[0].thumbnail);
+                },
+                error: function (e) {
+                    console.log('Error...' + e.message);
+                }
+            });
+        }
+
+        //获取歌曲列表.
+        function get_song(vindex, vrows) {
+            $.ajax("/api/getsonglist", {
+                data: { index: vindex, rows: vrows, albumnId: "{$aid}" },
+                async: false,
+                dataType: "jsonp",
+                jsonp: "callback",
+                crossDomain: true,
+                success: function (json) {
+                    $('#songlist').html("");
+                    var shtml = "";
+                    //console.log(json);
+                    $.each(json.result, function (i, k) {
+                        shtml += '<tr>';
+                        var isplay = false;
+                        if (k.filetype === 'mp3' || k.filetype === 'm4a') {
+                            isplay = true;
+                        }
+                        //歌名
+                        if (isplay) {
+                            if (k.notes === null || k.notes === '') {
+                                shtml += '<td><a href="javascript:;" onclick="open_song(' + k.id + ')"><span title="' + k.songname + '">' + k.songname + '&nbsp;</span></a> </td>';
+
+                            } else {
+                                shtml += '<td><a href="javascript:;" onclick="open_song(' + k.id + ')"><span title="' + k.songname + '">' + k.songname + '&nbsp;</span></a>  <span style="color: #939394;">(' + k.notes + ') </span> </td>';
+                            }
+                        } else {
+                            if (k.notes === null || k.notes === '') {
+                                shtml += '<td>' + Xingzhi.paging.cut_str(k.songname, 18) + ' </td>';
+                            } else {
+                                shtml += '<td>' + Xingzhi.paging.cut_str(k.songname, 18) + ' <span style="color: #939394;">(' + k.notes + ') </span> </td>';
+                            }
+                        }
+                        //歌手
+                        if (k.feat === '' || k.feat === null)
+                            shtml += '<td> {$v.singername} </td>';
+                        else
+                            shtml += '<td>{$v.singername}/' + Xingzhi.paging.cut_str(k.feat, 4) + '&nbsp;</td>';
+                        //作曲
+                        shtml += '<td><span title="' + k.bymusic + '">' + k.bymusic + '&nbsp;</span></td>';
+                        //作词
+                        shtml += '<td><span title="' + k.byword + '">' + k.byword + '&nbsp;</span></td>';
+                        //编曲
+                        shtml += '<td>' + k.bianqu + '&nbsp;</td>';
+
+                        shtml += '<td> <a title="编辑" href="/music/editsong?songid=' + k.id + '" class="popup-edit btn btn-xs btn-primary">编辑</a> <a title="删除" href="javascript:;" class="btn btn-xs btn-danger" onclick="deletesong(' + k.id + ')">删除</a> </td>';
+
+                        shtml += '</tr>';
+                    });
+
+                    $('#songlist').html(shtml);
+                    Xingzhi.initmagnificPopup.iframeLoad('.popup-edit');
+
+                },
+                error: function (e) {
+                    console.log('Error...' + e.message);
+                }
+            });
+        }
+        $(document).ready(function () {
+            //加载初始化图片列表、添加页面
+            Xingzhi.initmagnificPopup.iframeLoad('.popup-gallery');
+            Xingzhi.initmagnificPopup.iframeLoad('.popup-add');
+            //获取歌曲
+            get_song();
+            //获取专辑
+            get_album();
+        });
+    </script>
+    <div class="text-center bottom_foot">
+        <ul class="list-inline">
+            <li><a class="color_while" target="_blank" href="{$ipadd}:9004/">火车票</a></li>
+            <li>
+                <a class="color_while" target="_blank"
+                   href="{$ipadd}:9006/weibo">微博会员</a>
+            </li>
+            <li>
+                <a class="color_while" target="_blank"
+                   href="{$ipadd}:9003/music">音乐</a>
+            </li>
+            <li><a class="color_while" target="_blank" href="{$ipadd}:9009/">街拍</a></li>
+            <li><a class="color_while" target="_blank" href="{$ipadd}:9007/">腾讯会员</a></li>
+            <li><a class="color_while" target="_blank" href="{$ipadd}/">相册</a></li>
+            <li><a class="color_while" target="_blank" href="{$ipadd}:9010/">书籍</a></li>
+            <li><a class="color_while" target="_blank" href="{$ipadd}:9600/">影片</a></li>
+        </ul>
+    </div>
+</body>
+</html>

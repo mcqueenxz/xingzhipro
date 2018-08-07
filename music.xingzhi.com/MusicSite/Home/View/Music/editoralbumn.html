@@ -1,0 +1,60 @@
+<include file="Public:header" title="修改歌手专辑" />
+</head>
+<body>
+    <div class="opera_frame">
+        <div class="opear_layer">
+            <table>
+                <tr>
+                    <td class="ltext">专辑名称：</td>
+                    <td>
+                        <input type="text" class="inputsty" id="albumname" name="albumname" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ltext">语言类型：</td>
+                    <td>
+                        <label><input type="radio" checked="checked" value="国语" name="languages" />国语</label>
+                        <label><input type="radio" value="粤语" name="languages" />粤语</label>
+                        <label><input type="radio" value="英语" name="languages" />英语</label>
+                        <label><input type="radio" value="日语" name="languages" />日语</label>
+                        <label><input type="radio" value="韩语" name="languages" />韩语</label>
+                        <label><input type="radio" value="韩语" name="languages" />法语</label>
+                        <label><input type="radio" value="其它" name="languages" />其它</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ltext">发行年月：</td>
+                    <td>
+                        <select id="issueyear"> </select>
+                        <select id="issuemonth"> </select>
+                        <script type="text/javascript">
+                        	var currentyear = new Date();
+                            for (var y = currentyear.getFullYear(); y >= 1930; y--) {
+                                $("<option value=\"" + y + "\">" + y + "</option>").appendTo($("#issueyear"));
+                            }
+                            for (var m = 1; m <= 12; m++) {
+                                $("<option value=\"" + m + "\">" + m + "</option>").appendTo($("#issuemonth"));
+                            }
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ltext"></td>
+                    <td>
+                        <input type="button" class="buttons" id="btnupload" name="btnupload" value="提交" />
+                    </td>
+                </tr>
+            </table>
+
+            <script type="text/javascript">
+                $(function () {
+                    $.post("/apimusic/upload_albumn", {}, function (data) {
+
+                    });
+                });
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>

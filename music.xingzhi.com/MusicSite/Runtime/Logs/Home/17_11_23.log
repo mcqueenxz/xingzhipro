@@ -1,0 +1,903 @@
+[ 2017-11-23T22:42:20+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003124s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002727s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0355s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0111s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0135s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000383s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.090395s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090579s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001999s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002818s ]
+
+[ 2017-11-23T22:42:21+08:00 ] 127.0.0.1 /apimusic/get_hot_song?callback=jQuery110209212984644525655_1511448140937&index=0&rows=15&_=1511448140938
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0033s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.listentime DESC LIMIT 15 [ RunTime:0.0079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2017-11-23T22:42:21+08:00 ] 127.0.0.1 /apimusic/get_record_song?callback=jQuery110209212984644525655_1511448140941&index=0&rows=15&_=1511448140942
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1465s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000606s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2017-11-23T22:42:21+08:00 ] 127.0.0.1 /apimusic/get_byword?callback=jQuery110209212984644525655_1511448140943&index=0&rows=15&_=1511448140944
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SELECT byword, COUNT(0) as total FROM song WHERE byword != '' GROUP BY byword ORDER BY total DESC LIMIT 0, 15 [ RunTime:0.0039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2017-11-23T22:42:21+08:00 ] 127.0.0.1 /apimusic/get_new_song?callback=jQuery110209212984644525655_1511448140939&index=0&rows=15&_=1511448140940
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0027s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.id DESC LIMIT 0, 15 [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000780s ]
+
+[ 2017-11-23T22:42:26+08:00 ] 127.0.0.1 /music/song?sid=3255
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined variable: songurl D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\8b5c046d47b69012df43b9b33a3fd750.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035622s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035669s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000695s ]
+
+[ 2017-11-23T22:42:27+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery1111042210238836171965_1511448146909&sid=3255&songtype=1&_=1511448146910
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE song.id = 3255 [ RunTime:0.0013s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3255 [ RunTime:0.0068s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000672s ]
+
+[ 2017-11-23T22:42:27+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+
+[ 2017-11-23T22:42:27+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=3255
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 3255 [ RunTime:0.0004s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3255 [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 109 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0032s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('3255','S\'il Suffisait D\'Aimer','Celine Dion','2017-11-23 22:42:27.000000') [ RunTime:0.0017s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2017-11-23T22:45:01+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006373s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2017-11-23T22:45:01+08:00 ] 127.0.0.1 /apimusic/get_hot_song?callback=jQuery1102042619899836706954_1511448301124&index=0&rows=15&_=1511448301125
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000604s ]
+
+[ 2017-11-23T22:45:01+08:00 ] 127.0.0.1 /apimusic/get_new_song?callback=jQuery1102042619899836706954_1511448301126&index=0&rows=15&_=1511448301127
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0038s ]
+SQL: select b.singername, a.* from song a INNER JOIN singer b ON b.id = a.singerid ORDER BY a.id DESC LIMIT 0, 15 [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000645s ]
+
+[ 2017-11-23T22:45:01+08:00 ] 127.0.0.1 /apimusic/get_byword?callback=jQuery1102042619899836706954_1511448301130&index=0&rows=15&_=1511448301131
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT byword, COUNT(0) as total FROM song WHERE byword != '' GROUP BY byword ORDER BY total DESC LIMIT 0, 15 [ RunTime:0.0031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000602s ]
+
+[ 2017-11-23T22:45:01+08:00 ] 127.0.0.1 /apimusic/get_record_song?callback=jQuery1102042619899836706954_1511448301128&index=0&rows=15&_=1511448301129
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000626s ]
+
+[ 2017-11-23T22:46:04+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery1111042210238836171965_1511448146909&songtype=1&_=1511448146911
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+NOTIC: [8] Undefined index: sid D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0063s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE (filetype = 'mp3' OR filetype = 'm4a') AND songtype = 1 ORDER BY RAND() LIMIT 1 [ RunTime:0.0318s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2949 [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2017-11-23T22:46:04+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=2949
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 2949 [ RunTime:0.0003s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2949 [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 42 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0038s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('2949','了解','郭富城','2017-11-23 22:46:04.000000') [ RunTime:0.0017s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000598s ]
+
+[ 2017-11-23T22:46:22+08:00 ] 127.0.0.1 /music/album_lib
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027858s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001276s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001369s ]
+
+[ 2017-11-23T22:46:22+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=0&rows=20&year=0&_=1511448382577
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: select a.* from singeralbum a where 1=1  ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where 1=1  ORDER BY issueyear DESC [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2017-11-23T22:46:23+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=0&rows=20&year=4&_=1511448382578
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000755s ]
+
+[ 2017-11-23T22:46:25+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=0&rows=20&year=3&_=1511448382579
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0041s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2017-11-23T22:46:27+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=0&rows=20&year=4&_=1511448382580
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2017-11-23T22:46:31+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=1&rows=20&year=4&_=1511448382581
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 20, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000728s ]
+
+[ 2017-11-23T22:46:32+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=2&rows=20&year=4&_=1511448382582
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 40, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000717s ]
+
+[ 2017-11-23T22:46:38+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=0&rows=20&year=4&_=1511448382583
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000711s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000746s ]
+
+[ 2017-11-23T22:46:42+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=0&rows=20&year=2&_=1511448382584
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 2000 AND a.issueyear <= 2009 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 2000 AND a.issueyear <= 2009 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000713s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000748s ]
+
+[ 2017-11-23T22:46:46+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102039299790121733547_1511448382576&index=0&rows=20&year=3&_=1511448382585
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0622s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0135s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0017s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002295s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002424s ]
+
+[ 2017-11-23T22:46:52+08:00 ] 127.0.0.1 /music/songlist?sid=26&aid=407
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 26 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `singeralbum` WHERE (  id = 407 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039920s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039967s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000804s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000843s ]
+
+[ 2017-11-23T22:46:52+08:00 ] 127.0.0.1 /apimusic/get_song_list?callback=jQuery1102026197762704291705_1511448412330&aid=407&_=1511448412331
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `song` WHERE ( albumnid = 407 )  [ RunTime:0.0035s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2017-11-23T22:46:54+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102012394106061903809_1511448414057&index=0&rows=20&year=3&_=1511448414058
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000843s ]
+
+[ 2017-11-23T22:46:57+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102012394106061903809_1511448414057&index=1&rows=20&year=3&_=1511448414059
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0040s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC LIMIT 20, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2017-11-23T22:47:15+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102012394106061903809_1511448414057&index=2&rows=20&year=3&_=1511448414060
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC LIMIT 40, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+
+[ 2017-11-23T22:47:42+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery1102012394106061903809_1511448414057&index=3&rows=20&year=3&_=1511448414061
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC LIMIT 60, 20 [ RunTime:0.0006s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1990 AND a.issueyear <= 1999 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000714s ]
+
+[ 2017-11-23T22:47:51+08:00 ] 127.0.0.1 /music/songlist?sid=55&aid=260
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 55 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `singeralbum` WHERE (  id = 260 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024336s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024399s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2017-11-23T22:47:51+08:00 ] 127.0.0.1 /apimusic/get_song_list?callback=jQuery110205819719090427931_1511448471414&aid=260&_=1511448471415
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `song` WHERE ( albumnid = 260 )  [ RunTime:0.0053s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000598s ]
+
+[ 2017-11-23T22:47:56+08:00 ] 127.0.0.1 /music/song?sid=2234
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000592s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+NOTIC: [8] Undefined variable: songurl D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\8b5c046d47b69012df43b9b33a3fd750.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005925s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2017-11-23T22:47:56+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery1111047656669113360794_1511448476189&sid=2234&songtype=1&_=1511448476190
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0046s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE song.id = 2234 [ RunTime:0.0004s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2234 [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2017-11-23T22:47:56+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=2234
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0036s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 2234 [ RunTime:0.0004s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 2234 [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 55 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0042s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('2234','阿飞和他的那个女人','郑智化','2017-11-23 22:47:56.000000') [ RunTime:0.0012s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2017-11-23T22:49:45+08:00 ] 127.0.0.1 /music/albumn_list?sid=55
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 55 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073937s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001631s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001756s ]
+
+[ 2017-11-23T22:49:45+08:00 ] 127.0.0.1 /apimusic/get_album_list?callback=jQuery1102003127753542855771_1511448585792&sid=55&_=1511448585793
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000843s ]
+NOTIC: [8] Undefined index: index D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: rows D:\www\phpweb\music.xingzhi.com\Common\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `singeralbum` WHERE ( singerid = 55 ) ORDER BY issueyear desc  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2017-11-23T22:49:47+08:00 ] 127.0.0.1 /music/album_lib
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006442s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006480s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2017-11-23T22:49:47+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110208065446652463819_1511448587133&index=0&rows=20&year=0&_=1511448587134
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where 1=1  ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0004s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where 1=1  ORDER BY issueyear DESC [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000538s ]
+
+[ 2017-11-23T22:49:48+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110208065446652463819_1511448587133&index=0&rows=20&year=5&_=1511448587135
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1970 AND a.issueyear <= 1979 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0004s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1970 AND a.issueyear <= 1979 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2017-11-23T22:49:50+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110208065446652463819_1511448587133&index=0&rows=20&year=4&_=1511448587136
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0038s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000535s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+
+[ 2017-11-23T22:49:57+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110208065446652463819_1511448587133&index=1&rows=20&year=4&_=1511448587137
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0035s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 20, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000643s ]
+
+[ 2017-11-23T22:50:11+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110208065446652463819_1511448587133&index=2&rows=20&year=4&_=1511448587138
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 40, 20 [ RunTime:0.0006s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000606s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2017-11-23T22:50:19+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110208065446652463819_1511448587133&index=1&rows=20&year=4&_=1511448587139
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 20, 20 [ RunTime:0.0005s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2017-11-23T22:50:21+08:00 ] 127.0.0.1 /apimusic/album_library?callback=jQuery110208065446652463819_1511448587133&index=0&rows=20&year=4&_=1511448587140
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0037s ]
+SQL: select a.* from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC LIMIT 0, 20 [ RunTime:0.0004s ]
+SQL: select COUNT(0) as 'total' from singeralbum a where a.issueyear >= 1980 AND a.issueyear <= 1989 ORDER BY issueyear DESC [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2017-11-23T22:50:37+08:00 ] 127.0.0.1 /music/songlist?sid=3&aid=290
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(0) AS 'total' FROM song [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `singeralbum` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `singeralbum` WHERE (  id = 290 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007558s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000657s ]
+
+[ 2017-11-23T22:50:37+08:00 ] 127.0.0.1 /apimusic/get_song_list?callback=jQuery110208823338712429141_1511448637285&aid=290&_=1511448637286
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `song` WHERE ( albumnid = 290 )  [ RunTime:0.0038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000560s ]
+
+[ 2017-11-23T22:50:42+08:00 ] 127.0.0.1 /music/song?sid=3123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined variable: songurl D:\www\phpweb\music.xingzhi.com\MusicSite\Runtime\Cache\Home\8b5c046d47b69012df43b9b33a3fd750.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006104s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006146s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000463s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2017-11-23T22:50:42+08:00 ] 127.0.0.1 /apimusic/get_song_random?callback=jQuery111105487886914280209_1511448642353&sid=3123&songtype=1&_=1511448642354
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0051s ]
+SQL: SELECT song.*, 
+				(SELECT singername from singer a WHERE a.id = song.singerid)  as singername,
+				(SELECT albumname from singeralbum b WHERE b.id = song.albumnid)  as albumname,
+				(SELECT thumbnail from singeralbum b WHERE b.id = song.albumnid)  as thumbnail 
+				FROM song WHERE song.id = 3123 [ RunTime:0.0004s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3123 [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000726s ]
+
+[ 2017-11-23T22:50:42+08:00 ] 127.0.0.1 /apimusic/get_song_info?songid=3123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `song` [ RunTime:0.0040s ]
+SQL: SELECT a.*,b.albumname,b.issueyear,c.singername FROM song a INNER JOIN singeralbum b ON b.id = a.albumnid INNER JOIN singer c ON c.id = a.singerid WHERE a.id = 3123 [ RunTime:0.0004s ]
+SQL: UPDATE song SET listentime = listentime + 1 WHERE id = 3123 [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `singer` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `singer` WHERE ( id = 3 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `songlistenrecord` [ RunTime:0.0038s ]
+SQL: INSERT INTO `songlistenrecord` (`songid`,`songname`,`singername`,`addtime`) VALUES ('3123','错觉','刘德华','2017-11-23 22:50:42.000000') [ RunTime:0.0014s ]
+SQL: select DISTINCT b.*,c.singername from songlistenrecord a INNER JOIN song b ON b.id = a.songid INNER JOIN singer c ON c.id = b.singerid order by a.id DESC limit 0,15 [ RunTime:0.1454s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+

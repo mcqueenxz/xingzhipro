@@ -1,0 +1,477 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-family: 微软雅黑;
+	background: #FBFBFD;
+}
+
+a {
+	color: #254F9E;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff0000;
+}
+
+ul, li, dd, dl, dt {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+/**Font Colors*/
+.fred {
+	color: #b40d40
+}
+
+.fgreen {
+	color: #597d14;
+	font-weight: bold;
+}
+
+.hbse {
+	color: #989a9a
+}
+
+/**Top Style*/
+.nav {
+	position: absolute;
+	z-index: 100;
+	top: 0px;
+	width: 100%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: #484848;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.nav a {
+	color: #FFF;
+	margin-left: 15px;
+}
+
+.nav a:hover {
+	color: #73CDF9;
+	margin-left: 15px;
+}
+
+.nav .core {
+	color: #73CDF9;
+}
+
+.nav .lst {
+	color: #FFF;
+	font-size: 18px;
+	line-height: 50px;
+	text-align: center;
+}
+
+/**Foot Style*/
+.foots {
+	width: 100%;
+	background: #484848;
+	height: 150px;
+	color: #FFF;
+	text-align: center;
+	clear: both;
+	overflow: hidden;
+	margin-top: 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+/*Small Navg Style*/
+.small_nav {
+	width: 99%;
+	border-radius: 5px;
+	margin: 0 auto;
+	line-height: 25px;
+	border: solid #d1d1d1 1px;
+	height: 28px;
+	margin-top: 55px;
+	padding-left: 15px;
+}
+
+.breadcrumb {
+	margin-top: 55px;
+}
+
+.select_type {
+	width: 99%;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding-top: 5px;
+	border: solid #d1d1d1 1px;
+	height: 35px;
+	margin-top: 8px;
+	padding-left: 15px;
+}
+
+.select_type input {
+	height: 25px;
+	line-height: 20px;
+	border-radius: 5px;
+	border: #254F9E 1px solid;
+	padding-left: 3px;
+}
+
+.select_type input.short {
+	width: 50px;
+}
+
+.select_type input.small {
+	width: 90px;
+}
+
+.select_type input.normal {
+	width: 140px;
+}
+
+/**Show Page Style**/
+.current-page {
+	width: 99%;
+	clear: both;
+	margin: 0 auto;
+	overflow: hidden;
+	background: #6f6c6c;
+	height: 50px;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.current-page .page-frame {
+	padding: 10px
+}
+
+.current-page .page-frame .page-area {
+	float: left;
+	display: block;
+	border-radius: 5px;
+	padding-top: 5px;
+	text-align: center;
+	background: #e8e8e8;
+	margin-left: 10px;
+	height: 30px;
+}
+
+.current-page .page-frame .first-page {
+	width: 60px;
+}
+
+.current-page .page-frame .prive-page {
+	width: 60px;
+}
+
+.current-page .page-frame .pagenow {
+	width: 90px;
+}
+
+.current-page .page-frame .next-page {
+	width: 60px;
+}
+
+.current-page .page-frame .last-page {
+	width: 60px;
+}
+
+.current-page .page-frame .page-data {
+	width: 150px;
+}
+
+/** Opera area for intsert or update of page*/
+.opera_frame {
+	width: 99%;
+	border: solid 1px #d1d1d1;
+	margin: 0 auto;
+	margin-top: 8px;
+	border-radius: 5px;
+	padding-bottom: 10px;
+}
+
+.opera_frame input, .opera_frame select {
+	border-radius: 5px;
+	line-height: 24px;
+	border: solid 1px #d66c2e;
+}
+
+textarea {
+	border: solid 1px #d66c2e;
+}
+
+.opera_frame input.buttons {
+	width: 100px;
+	color: #FFF;
+	background-color: #863523;
+	height: 30px;
+}
+
+.opera_frame .selectsty {
+	width: 180px;
+}
+
+.opera_frame .select-small {
+	width: 80px;
+}
+
+.opera_frame .inputsty {
+	width: 250px;
+}
+
+.opera_frame .smallinput {
+	width: 50px;
+	height: 28px;
+}
+
+.opera_frame .shortinput {
+	width: 80px;
+	height: 28px;
+}
+
+.opera_frame .opear_layer {
+	width: 97%;
+	border-radius: 5px;
+	border: solid 1px #d66c2e;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+/*添加表格*/
+.opera_frame .opear_layer table {
+	width: 97%;
+	margin: 0 auto;
+}
+
+.opera_frame .opear_layer table td {
+	padding: 5px;
+	vertical-align: top;
+}
+
+.opera_frame .opear_layer table td textarea {
+	width: 480px;
+	height: 100px;
+	border-radius: 5px;
+}
+
+.opera_frame .opear_layer table .ltext {
+	text-align: right;
+	font-weight: bold;
+	padding-right: 5px;
+	width: 21%;
+}
+
+.opera_frame #img_array img {
+	max-width: 160px;
+}
+
+/**图片数据展示框架*/
+.picframe {
+	width: 99%;
+	border: solid 1px #d1d1d1;
+	margin: 0 auto;
+	margin-top: 8px;
+	border-radius: 5px;
+	padding-bottom: 10px;
+	min-height: 100%;
+}
+
+.picframe .parea {
+	padding: 5px;
+	overflow: hidden;
+}
+
+.picframe .parea .pic-list {
+	float: left;
+	margin-left: 35px;
+	margin-top: 10px;
+	background: #FFF;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.picframe .parea .pic-list .pic-show {
+	width: 190px;
+	height: 204px;
+	border: solid 2px #FFF;
+	border-radius: 5px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.picframe .parea .pic-list .pic-show:hover {
+	border: solid 2px #bc0000;
+}
+
+.picframe .parea .pic-list .pic-show img {
+	border-radius: 5px;
+	max-width: 161px;
+	max-height: 200px;
+}
+
+.picframe .parea .pic-list .pic-info {
+	line-height: 23px;
+}
+
+.picframe .parea .pic-list .pic-info li {
+	height: 25px;
+	padding-left: 5px;
+}
+
+/**火车票信息列表*/
+.mytlist {
+	margin: 0 auto;
+	width: 99%;
+	text-align: center;
+	border: solid 1px #254F9E;
+	margin-top: 5px;
+}
+
+.mytlist th {
+	height: 35px;
+	text-align: center;
+	border-right: solid 1px #254F9E;
+}
+
+.mytlist td {
+	height: 35px;
+	text-align: center;
+	border-top: solid 1px #254F9E;
+	border-right: solid 1px #254F9E;
+}
+
+.mytlist tr:hover {
+	background-color: #cccccc;
+}
+
+/**检测移动设备样式 - iPhone 5s 屏幕机型*/
+@media screen and (min-width: 1px) and (max-width: 320px) {
+	.nav .lst {
+		font-size: 12px;
+	}
+	.nav a {
+		color: #FFF;
+		margin-left: 8px;
+	}
+	a {
+		font-size: 12px;
+	}
+	input {
+		font-size: 12px;
+	}
+	.select_type {
+		width: 99%;
+		border-radius: 5px;
+		margin: 0 auto;
+		padding-top: 5px;
+		border: solid #d1d1d1 1px;
+		height: 55px;
+		margin-top: 8px;
+		padding-left: 15px;
+	}
+	.select_type span {
+		display: block;
+		width: 100%;
+	}
+	.select_type input {
+		height: 25px;
+		line-height: 20px;
+		border-radius: 5px;
+		border: #254F9E 1px solid;
+		padding-left: 3px;
+	}
+	.select_type input.short {
+		width: 50px;
+	}
+	.select_type input.normal {
+		width: 140px;
+	}
+	.picframe {
+		width: 99%;
+		border: solid 1px #d1d1d1;
+		margin: 0 auto;
+		margin-top: 8px;
+		border-radius: 5px;
+		padding-bottom: 10px;
+	}
+	.picframe .parea {
+		padding: 5px;
+		overflow: hidden;
+	}
+	.picframe .parea .pic-list {
+		float: left;
+		margin-left: 10px;
+		margin-top: 5px;
+		background: #FFF;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+	.picframe .parea .pic-list .pic-show {
+		width: 105px;
+		height: 140px;
+		border: solid 2px #FFF;
+		border-radius: 5px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.picframe .parea .pic-list .pic-show:hover {
+		border: solid 2px #bc0000;
+	}
+	.picframe .parea .pic-list .pic-show img {
+		border-radius: 5px;
+		max-width: 100px;
+	}
+	.picframe .parea .pic-list .pic-info {
+		line-height: 23px;
+	}
+	.picframe .parea .pic-list .pic-info li {
+		height: 25px;
+		padding-left: 5px;
+		font-size: 12px;
+	}
+	.current-page {
+		width: 99%;
+		clear: both;
+		margin: 0 auto;
+		overflow: hidden;
+		background: #6f6c6c;
+		height: 78px;
+		border-radius: 5px;
+		margin-top: 10px;
+	}
+	.current-page .page-frame {
+		
+	}
+	.current-page .page-frame .page-area {
+		float: left;
+		display: block;
+		border-radius: 5px;
+		padding-top: 5px;
+		text-align: center;
+		background: #e8e8e8;
+		margin-left: 10px;
+		height: 30px;
+	}
+	.current-page .page-frame .first-page {
+		width: 60px;
+	}
+	.current-page .page-frame .prive-page {
+		width: 60px;
+	}
+	.current-page .page-frame .pagenow {
+		width: 90px;
+	}
+	.current-page .page-frame .next-page {
+		width: 60px;
+	}
+	.current-page .page-frame .last-page {
+		width: 60px;
+	}
+	.current-page .page-frame .page-data {
+		width: 150px;
+	}
+}

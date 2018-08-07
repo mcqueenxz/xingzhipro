@@ -1,0 +1,156 @@
+<include file="Public:header" title="随机试听歌曲" />
+<style type="text/css">
+.cidai_bottom {
+	line-height: 32px;
+}
+</style>
+</head>
+<body>
+	<div class="nav">
+		<div class="lst">
+			<a href="javascript:;" class="core">音乐站点</a>
+		</div>
+	</div>
+	<div class="small_nav">
+		<a href="/">首页</a>
+	</div>
+	<div class="select_type">
+		<include file="Public:select_area" />
+	</div>
+	<div class="picframe">
+		<div class="parea" id="contlist">
+			<div style="width: 95%; margin: 0 auto;">
+				<div style="">
+					<div style="overflow: hidden;">
+						<div style="float: left; width: 300px;">
+							<div style="padding: 0px 0px 5px 0px;">
+								<img id="albumpic" width="300px" height="302px"
+									src="{$thumbnail}" />
+							</div>
+							<div style="padding: 0px 0px 5px 0px;">
+								<audio id="media" style="display: block;" controls="true"
+									autoplay="autoplay">
+									<source src="{$songurl}" />
+									你的浏览器不支持video标签。
+								</audio>
+							</div>
+						</div>
+						<div style="float: left; width: 320px; margin-left: 50px;">
+							<div style="padding: 0px 0px 20px 0px; height: 305px;">
+								<ul class="cidai_bottom" id="song_info">
+									<li><strong>歌曲：</strong> <span id="sp_songname">{$songname}</span></li>
+									<li><strong>时长：</strong> <span id="sp_times">{$times}</span>
+									</li>
+									<li><strong>歌手：</strong> <span id="sp_singername">{$singername}</span></li>
+									<li><strong>作词：</strong> <span id="sp_byword">{$byword}</span>
+									</li>
+									<li><strong>作曲：</strong> <span id="sp_bymusic">{$bymusic}</span>
+									</li>
+									<li><strong>编曲：</strong> <span id="sp_bianqu">{$bianqu}</span>
+									</li>
+									<li><strong>时长：</strong> <span id="sp_albumname">{$albumname}</span>
+									</li>
+									<li><input type="hidden" id="isuptime" value="0" /></li>
+								</ul>
+							</div>
+							<div>
+								<a href="javascript:pause_music();" id="nextmusic"
+									data-value="1">播放</a> <a href="javascript:net_music();"
+									id="nextmusic">换一首</a>
+							</div>
+						</div>
+						<div style="float: left; width: 320px; margin-left: 10px;">
+							歌词：
+							<div>暂无歌词</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+                    //获取播放器对象
+                    var p = $("#media")[0];
+                    p.volume = 0.6; //初始化音量 
+                    //获取歌曲信息
+                    var songinfo = $("#song_info span");
+                    //记录标记
+                    var record = $("#hiflag");
+                    //歌曲暂停
+                    function pause_music() {
+                        var v = $("#nextmusic").attr("data-value");
+                        if (v === '' || v === 0) {
+                            p.play();
+                            $("#nextmusic").attr("data-value", "1");
+                            $("#nextmusic").html("播放");
+                        } else {
+                            p.pause();
+                            $("#nextmusic").attr("data-value", "0");
+                            $("#nextmusic").html("暂停");
+                        }
+                    }
+                    //下一首歌
+                    function net_music() {
+                        //p.pause();
+                        get_song_ran();
+                    }
+                    //获取歌曲信息
+                    function get_song_info(songid) {
+                        $.get("/apimusic/get_song_info", {songid: songid}, function (data) {
+                            var json = eval("(" + data + ")");
+                            $.each(json.result, function (i, k) {
+                                $(songinfo[0]).html(k.songname);
+                                $(songinfo[3]).html(k.byword);
+                                $(songinfo[4]).html(k.bymusic);
+                                $(songinfo[5]).html(k.bianqu);
+                                $(songinfo[6]).html(k.times);
+                                if (k.times === "00:00:00") {
+                                    var times = p.duration;
+                                    $.ajax("/apimusic/set_song_duration",
+                                            {
+                                                data: {sid: k.id, tims: times},
+                                                async: false,
+                                                dataType: "jsonp",
+                                                jsonp: "callback",
+                                                crossDomain: true,
+                                                success: function (json) {
+                                                    alert(json.result);
+                                                }
+                                            });
+                                }
+                                document.title = k.songname;
+                            });
+                        });
+                    }
+                    //加载歌曲列表.
+                    function get_song_ran(songid) {
+                        $.ajax("/apimusic/get_song_random", {
+                            data: {sid: songid},
+                            async: false,
+                            dataType: "jsonp",
+                            jsonp: "callback",
+                            crossDomain: true,
+                            success: function (json) {
+                                var url = "{$MUSICDOMAIN}" + json.result[0].path + "?r=" + Math.random();
+                                $("#media").attr("src", url);
+                                $("#albumpic").attr("src", "{$IMGDOMAIN}" + json.result[0].thumbnail);
+                                get_song_info(json.result[0].id);
+                            },
+                            error: function (e) {
+                                console.log('Error...' + e.message);
+                            }
+                        });
+                    }
+                    setInterval(function () {
+                        if (p.ended) {
+                            get_song_ran();
+                        } else {
+                            if (p.readyState === 0 || p.readyState === 1) {
+                                get_song_ran();
+                            }
+                        }
+                    }, 2100);
+                    get_song_ran("{$sid}");
+                </script>
+			</div>
+		</div>
+		<include file="Public:foot" syear="2007" eyear="2017" />
+</body>
+</html>

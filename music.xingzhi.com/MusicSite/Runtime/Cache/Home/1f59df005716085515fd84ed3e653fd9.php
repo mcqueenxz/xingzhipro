@@ -1,0 +1,99 @@
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新增歌手</title>
+    <!--bootstrap 框架-->
+    <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
+    <!--jQuery 框架-->
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <!--magnific-popup 框架-->
+    <link type="text/css" href="/css/magnific-popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+    <!--提示信息弹出层 框架-->
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script type="text/javascript" src="/layer/extend/layer.ext.js"></script>
+    <style type="text/css">
+        body { font-family: 'Microsoft YaHei', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+        a.color_while { color: #FFF; }
+        a.color_while:hover { color: #ffd800; }
+        a.color_garpwhile { color: #a3a1a1; }
+    </style>
+</head>
+<body>
+    <div style="padding:1rem;">
+        <table class="table table-bordered table-condensed table-responsive">
+            <tr>
+                <td class="col-md-2 text-right table-vertical-align"><label>歌手名称:</label></td>
+                <td>
+                    <input type="text" class="form-control" id="singername" name="singername" />
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2 text-right table-vertical-align"><label>性别:</label></td>
+                <td>
+                    <label> <input type="radio" value="女" id="gender1" name="gender" checked="checked" />女 </label>
+                    <label> <input type="radio" value="男" id="gender0" name="gender" />男 </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2 text-right table-vertical-align"><label>地区:</label></td>
+                <td>
+                    <label> <input type="radio" value="港台" id="region1" name="region" checked="checked" />港台 </label>
+                    <label> <input type="radio" value="大陆" id="region2" name="region" />大陆 </label>
+                    <label> <input type="radio" value="日韩" id="region3" name="region" />日韩 </label>
+                    <label> <input type="radio" value="欧美" id="region4" name="region" />欧美 </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-2 text-right table-vertical-align">
+                    <label> </label>
+                </td>
+                <td>
+                    <input type="button" class="btn btn-primary" id="btnupload" name="btnupload" value="提交" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+        $("#btnupload").click(function () {
+            var vsingername = $("#singername").val();
+            if (vsingername == "") {
+                layer.alert("歌手名称不能为空.");
+                return;
+            } else {
+                $.ajax({
+                    url: "/api/addsinger",
+                    type: 'post',
+                    async: true,
+                    data: {
+                        singername: vsingername,
+                        gender: $("input[name='gender']:checked").val(),
+                        region: $("input[name='region']:checked").val()
+                    },
+                    timeout: 5000,
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                    },
+                    success: function (data, textStatus, jqXHR) {
+                        if (data.code > 0) {
+                            layer.msg(data.msg);
+                            setTimeout(function () {
+                                window.parent.location.href = window.parent.location.href;
+                            }, 2000);
+                        } else {
+                            layer.msg(data.msg);
+                        }
+                    },
+                    error: function (xhr, status) {
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
