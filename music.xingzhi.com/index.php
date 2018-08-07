@@ -25,3 +25,4 @@ define ( 'COMMON_PATH', './Common/' );
 header ( 'Content-Type:text/html; charset=utf-8' );
 // 引入ThinkPHP入口文件
 require '/ThinkPHP/ThinkPHP.php';
+ 
