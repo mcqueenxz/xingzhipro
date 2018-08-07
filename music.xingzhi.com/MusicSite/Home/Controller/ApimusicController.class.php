@@ -2,7 +2,7 @@
 
 namespace Home\Controller;
 
-use Think\Controller;
+use Think\Controller; 
 use Home\Model\SingerModel;
 use Home\Model\SingeralbumModel;
 use Home\Model\SongModel;
@@ -11,39 +11,39 @@ use Org\Util\Redis;
 class ApimusicController extends Controller {
 
 	/**
-	 * 结果数组
+	 * 缁撴灉鏁扮粍
 	 *
 	 * @var string
 	 */
 	private $result = array ();
 	/**
-	 * 对磁盘歌曲重命名
+	 * 瀵圭鐩樻瓕鏇查噸鍛藉悕
 	 *
-	 * @author 邢志 2017年11月26日 下午4:34:03
+	 * @author 閭㈠織 2017骞�11鏈�26鏃� 涓嬪崍4:34:03
 	 */
 	public function renametodisk() {
 		$tspan = get_url_param ( "tspan" );
 		if (empty ( $tspan )) {
 			echo "no" . time ();
 		}
-		// 但前时间 - 时间戳
+		// 浣嗗墠鏃堕棿 - 鏃堕棿鎴�
 		if (time () - $tspan > 300) {
 			echo 'ok' . (time () - $tspan);
 		} else {
-			echo '超时';
+			echo '瓒呮椂';
 		}
 	}
 
 	/**
-	 * 删除歌曲信息
+	 * 鍒犻櫎姝屾洸淇℃伅
 	 *
-	 * @author 邢志 2017年10月4日上午9:29:04
+	 * @author 閭㈠織 2017骞�10鏈�4鏃ヤ笂鍗�9:29:04
 	 */
 	public function deletesong() {
 		$songid = get_url_param ( 'sid' );
 		if (empty ( $songid )) {
 			$this->result ['result'] = 0;
-			$this->result ['msg'] = '歌曲主键错误.';
+			$this->result ['msg'] = '姝屾洸涓婚敭閿欒.';
 		} else {
 			$songdb = new SongModel ();
 			$songarray = $songdb->get_song_byid ( $songid );
@@ -51,21 +51,21 @@ class ApimusicController extends Controller {
 				$rs = $songdb->deletesong ( $songid );
 				$this->result ['result'] = $rs;
 				$path_root = C ( 'SAVE_ROOT_MUSIC_FILE' );
-				// 在utf-8编码时，对中文路径的文件，需要先做gbk编码处理.
+				// 鍦╱tf-8缂栫爜鏃讹紝瀵逛腑鏂囪矾寰勭殑鏂囦欢锛岄渶瑕佸厛鍋歡bk缂栫爜澶勭悊.
 				$delresult = @unlink ( iconv ( 'utf-8', 'gbk', $path_root . $songarray [0] ['path'] ) );
 				if ($delresult) {
-					$this->result ['msg'] = '歌曲【' . $songarray [0] ['songname'] . '】删除完毕.';
+					$this->result ['msg'] = '姝屾洸銆�' . $songarray [0] ['songname'] . '銆戝垹闄ゅ畬姣�.';
 				} else {
-					$this->result ['msg'] = '歌曲【' . $songarray [0] ['songname'] . '】删除数据.但文件无法删除.';
+					$this->result ['msg'] = '姝屾洸銆�' . $songarray [0] ['songname'] . '銆戝垹闄ゆ暟鎹�.浣嗘枃浠舵棤娉曞垹闄�.';
 				}
 			}
 		}
 		echo json_encode ( $this->result );
 	}
 	/**
-	 * 获取作词人信息
+	 * 鑾峰彇浣滆瘝浜轰俊鎭�
 	 *
-	 * @author 邢志 2017年9月24日 下午5:08:58
+	 * @author 閭㈠織 2017骞�9鏈�24鏃� 涓嬪崍5:08:58
 	 */
 	public function get_byword() {
 		$rows = get_url_param ( "rows" );
@@ -75,7 +75,7 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 获取歌曲
+	 * 鑾峰彇姝屾洸
 	 */
 	public function search_song() {
 		$key = get_url_param ( "key" );
@@ -88,7 +88,7 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 设置歌曲长度字段
+	 * 璁剧疆姝屾洸闀垮害瀛楁
 	 */
 	public function set_song_duration() {
 		$sid = get_url_param ( "sid" );
@@ -99,7 +99,7 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 最近试听歌曲
+	 * 鏈�杩戣瘯鍚瓕鏇�
 	 */
 	public function get_record_song() {
 		$index = get_url_param ( 'index' );
@@ -112,7 +112,7 @@ class ApimusicController extends Controller {
 			$redisdb = new Redis ( C ( 'REDIS_HOST' ), C ( 'REDIS_PORT' ), C ( 'REDIS_AUTH' ) );
 			$values = $redisdb->getHashValueByKey ( C ( 'PRIM_KEY_SONG' ), C ( 'RECORD_SONGS' ) );
 			if (strlen ( $values ) <= 0) {
-				// 从数据库中读取
+				// 浠庢暟鎹簱涓鍙�
 				$this->result ['result'] = $songdb->get_record_song ( $index, $rows );
 				$redisdb->setHash ( C ( 'PRIM_KEY_SONG' ), C ( 'RECORD_SONGS' ), json_encode ( $this->result ) );
 				$values = $redisdb->getHashValueByKey ( C ( 'PRIM_KEY_SONG' ), C ( 'RECORD_SONGS' ) );
@@ -122,9 +122,9 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 获取最新的歌曲
+	 * 鑾峰彇鏈�鏂扮殑姝屾洸
 	 *
-	 * @author 邢志 2017年7月27日 下午9:45:14
+	 * @author 閭㈠織 2017骞�7鏈�27鏃� 涓嬪崍9:45:14
 	 */
 	public function get_new_song() {
 		$index = get_url_param ( 'index' );
@@ -135,7 +135,7 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 获取热门点击歌曲
+	 * 鑾峰彇鐑棬鐐瑰嚮姝屾洸
 	 */
 	public function get_hot_song() {
 		//$index = get_url_param ( 'index' );
@@ -144,12 +144,12 @@ class ApimusicController extends Controller {
 		if (C ( 'REDIS_ISOPEN' )) {
 			$redisdb = new Redis ( C ( 'REDIS_HOST' ), C ( 'REDIS_PORT' ), C ( 'REDIS_AUTH' ) );
 			$values = $redisdb->getHashValueByKey ( C ( 'PRIM_KEY_SONG' ), C ( 'HOST_SONGS' ) );
-			// 验证Redis 中是否存有缓存数据.
+			// 楠岃瘉Redis 涓槸鍚﹀瓨鏈夌紦瀛樻暟鎹�.
 			if (strlen ( $values ) <= 0) {
 				$songdb = new SongModel ();
 				$this->result ['result'] = $songdb->get_hot_song ( $rows );
 				$redisdb->setHash ( C ( 'PRIM_KEY_SONG' ), C ( 'HOST_SONGS' ), json_encode ( $this->result ) );
-				// 设置缓存列表的有效时间.
+				// 璁剧疆缂撳瓨鍒楄〃鐨勬湁鏁堟椂闂�.
 				$redisdb->setKeyExpire ( C ( 'PRIM_KEY_SONG' ), C ( 'REDIS_EXPIRE' ) );
 				$values = $redisdb->getHashValueByKey ( C ( 'PRIM_KEY_SONG' ), C ( 'HOST_SONGS' ) );
 			}
@@ -162,18 +162,18 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 获取专辑列表
+	 * 鑾峰彇涓撹緫鍒楄〃
 	 *
-	 * @author xingzhi 2018年8月5日下午6:06:50
+	 * @author xingzhi 2018骞�8鏈�5鏃ヤ笅鍗�6:06:50
 	 * @param int $index
-	 *        	索引页
+	 *        	绱㈠紩椤�
 	 * @param int $rows
-	 *        	显示行
+	 *        	鏄剧ず琛�
 	 * @param int $year
-	 *        	年份值.
+	 *        	骞翠唤鍊�.
 	 */
 	public function album_library($index, $rows, $year) {
-		// 获取专辑列表.
+		// 鑾峰彇涓撹緫鍒楄〃.
 		$albumdb = new SingeralbumModel ();
 		$array = $albumdb->get_album_condition ( $year, $index, $rows );
 		$total = $array ['total'] [0] ['total'];
@@ -186,12 +186,12 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 获取结果数组
+	 * 鑾峰彇缁撴灉鏁扮粍
 	 *
 	 * @param string $value
-	 *        	结果值
+	 *        	缁撴灉鍊�
 	 * @param string $msg
-	 *        	信息
+	 *        	淇℃伅
 	 */
 	private function get_result_array($value, $msg) {
 		$result = array (
@@ -202,9 +202,9 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 修改歌曲试听次数.
+	 * 淇敼姝屾洸璇曞惉娆℃暟.
 	 *
-	 * @author 邢志 2017年6月27日 下午9:49:54
+	 * @author 閭㈠織 2017骞�6鏈�27鏃� 涓嬪崍9:49:54
 	 */
 	public function set_song_listentime() {
 		$songid = get_url_param ( 'songid' );
@@ -214,9 +214,9 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 随机获取歌曲信息
+	 * 闅忔満鑾峰彇姝屾洸淇℃伅
 	 *
-	 * @author 邢志 2017年6月15日 下午9:49:15
+	 * @author 閭㈠織 2017骞�6鏈�15鏃� 涓嬪崍9:49:15
 	 */
 	public function get_song_random() {
 		$songid = get_url_param ( 'sid' );
@@ -225,22 +225,22 @@ class ApimusicController extends Controller {
 			$songtype = 1;
 		$songdb = new SongModel ();
 		$this->result ['result'] = $songdb->get_song_random ( $songid, $songtype );
-		// 修改歌曲试听次数.
+		// 淇敼姝屾洸璇曞惉娆℃暟.
 		$songdb->update_song_listentime ( $this->result ['result'] [0] ['id'] );
 		echo get_url_param ( 'callback' ) . "(" . json_encode ( $this->result ) . ")";
 	}
 
 	/**
-	 * 新增歌曲信息
+	 * 鏂板姝屾洸淇℃伅
 	 *
-	 * @author 邢志 2017年6月8日 下午8:25:12
+	 * @author 閭㈠織 2017骞�6鏈�8鏃� 涓嬪崍8:25:12
 	 */
 	public function add_song() {
 		$array = array (
 				'result' => 0,
 				'msg' => ''
 		);
-		// 参数
+		// 鍙傛暟
 		$singerid = get_url_param ( "sid" );
 		$albumnid = get_url_param ( "aid" );
 		$songname = trim ( get_url_param ( "songname" ) );
@@ -253,70 +253,70 @@ class ApimusicController extends Controller {
 		$songtype = get_url_param ( "songtype" );
 		if (empty ( $songtype ))
 			$songtype = 1;
-		// 获取演唱者信息
+		// 鑾峰彇婕斿敱鑰呬俊鎭�
 		$singerdb = new SingerModel ();
 		$singer = $singerdb->get_singer ( $singerid );
-		// 获取专辑信息
+		// 鑾峰彇涓撹緫淇℃伅
 		$albumndb = new SingeralbumModel ();
 		$album = $albumndb->get_album_byid ( $albumnid );
-		// 如果文件存在时.
+		// 濡傛灉鏂囦欢瀛樺湪鏃�.
 		if (! empty ( $_FILES ['filedata'] )) {
-			// 原始文件名
+			// 鍘熷鏂囦欢鍚�
 			$original = $_FILES ['filedata'] ['name'];
-			// 临时图片路径
+			// 涓存椂鍥剧墖璺緞
 			$temp_file = $_FILES ['filedata'] ['tmp_name'];
-			// 图片大小
+			// 鍥剧墖澶у皬
 			$file_size = $_FILES ['filedata'] ['size'];
-			// 文件扩展名
+			// 鏂囦欢鎵╁睍鍚�
 			$file_ex = pathinfo ( $original, PATHINFO_EXTENSION );
-			// 保存文件
+			// 淇濆瓨鏂囦欢
 			$save_root = C ( 'SAVE_ROOT_MUSIC_FILE' );
 			$save_dir = '/' . $singer [0] ['singername'] . '/' . $album [0] ['albumname'] . '/';
-			// 创建文件夹.
+			// 鍒涘缓鏂囦欢澶�.
 			if (! is_dir ( set_iconv_winpath ( $save_root . $save_dir ) )) {
 				mkdir ( set_iconv_winpath ( $save_root . $save_dir ), 0777, true );
 			}
 			$path = $save_dir . $songname . '.' . $file_ex;
-			// 音频文件秒数
+			// 闊抽鏂囦欢绉掓暟
 			$times = get_mp3_timeout ( $temp_file );
 		} else {
 			$times = 0;
 		}
-		// 添加数据
+		// 娣诲姞鏁版嵁
 		$songdb = new SongModel ();
 		$is_exists_data = $songdb->get_song_more_conditon ( $singerid, $albumnid, $songname );
 		if (! empty ( $is_exists_data )) {
-			$array ['msg'] = '歌曲已存在.';
+			$array ['msg'] = '姝屾洸宸插瓨鍦�.';
 			$array ['result'] = 0;
 			echo json_encode ( $array );
 			exit ();
 		}
-		// 插入数据库
+		// 鎻掑叆鏁版嵁搴�
 		$rs = $songdb->add_song ( $singerid, $albumnid, $songname, $byword, $bymusic, $bianqu, $times, $songword, $path, $file_size, strtolower ( $file_ex ), $feat, $notes, $songtype );
-		// 如果数据库添加成功.
+		// 濡傛灉鏁版嵁搴撴坊鍔犳垚鍔�.
 		if ($rs > 0) {
 			if (! empty ( $_FILES ['filedata'] )) {
-				// 验证是否是post可移动的文件.
+				// 楠岃瘉鏄惁鏄痯ost鍙Щ鍔ㄧ殑鏂囦欢.
 				if (is_uploaded_file ( $temp_file )) {
 					$rs = move_uploaded_file ( $temp_file, set_iconv_winpath ( $save_root . $path ) );
 					if ($rs) {
-						$array ['msg'] = '歌曲【' . $songname . '】添加成功.';
+						$array ['msg'] = '姝屾洸銆�' . $songname . '銆戞坊鍔犳垚鍔�.';
 						$array ['result'] = 1;
 					} else {
-						$array ['msg'] = '歌曲【' . $songname . '】数据添加成功.但文件移动失败.';
+						$array ['msg'] = '姝屾洸銆�' . $songname . '銆戞暟鎹坊鍔犳垚鍔�.浣嗘枃浠剁Щ鍔ㄥけ璐�.';
 						$array ['result'] = 0;
 					}
 				} else {
-					// 如果无法移动时.则尽心复制.
+					// 濡傛灉鏃犳硶绉诲姩鏃�.鍒欏敖蹇冨鍒�.
 					if (! copy ( $temp_file, set_iconv_winpath ( $save_root . $path ) )) {
-						$array ['msg'] = '文件复制失败.';
+						$array ['msg'] = '鏂囦欢澶嶅埗澶辫触.';
 					} else {
-						$array ['msg'] = '复制成功.';
+						$array ['msg'] = '澶嶅埗鎴愬姛.';
 					}
 				}
 			} else {
 				if ($rs) {
-					$array ['msg'] = '信息添加完毕.';
+					$array ['msg'] = '淇℃伅娣诲姞瀹屾瘯.';
 					$array ['result'] = 1;
 				}
 			}
@@ -325,25 +325,25 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 获取歌曲信息
+	 * 鑾峰彇姝屾洸淇℃伅
 	 *
-	 * @author 邢志 2017年6月24日 下午4:57:33
+	 * @author 閭㈠織 2017骞�6鏈�24鏃� 涓嬪崍4:57:33
 	 */
 	public function get_song_info() {
 		$songid = get_url_param ( 'songid' );
-		// 获取歌曲信息
+		// 鑾峰彇姝屾洸淇℃伅
 		$songdb = new SongModel ();
 		$song = $songdb->get_song_byid ( $songid );
-		// 修改歌曲试听次数.
+		// 淇敼姝屾洸璇曞惉娆℃暟.
 		// $songdb->update_song_listentime($songid);
-		// 增加试听记录
+		// 澧炲姞璇曞惉璁板綍
 		$this->add_song_record ( $song );
 // 		if (C ( 'REDIS_ISOPEN' )) {
-// 			// 从数据库中读取后写入Redis
+// 			// 浠庢暟鎹簱涓鍙栧悗鍐欏叆Redis
 // 			$redisdb = new Redis ( C ( 'REDIS_HOST' ), C ( 'REDIS_PORT' ), C ( 'REDIS_AUTH' ) );
 // 			$this->result ['result'] = $songdb->get_record_song ( 0, 15 );
 // 			$redisdb->setHash ( C ( 'PRIM_KEY_SONG' ), C ( 'RECORD_SONGS' ), json_encode ( $this->result ) );
-// 			// 设置缓存列表的有效时间.
+// 			// 璁剧疆缂撳瓨鍒楄〃鐨勬湁鏁堟椂闂�.
 // 			$redisdb->setKeyExpire ( C ( 'PRIM_KEY_SONG' ), C ( 'REDIS_EXPIRE' ) );
 // 		}
 		$this->result ['result'] = $song;
@@ -352,24 +352,24 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 增加试听记录
+	 * 澧炲姞璇曞惉璁板綍
 	 *
 	 * @param string $song
-	 *        	歌曲信息数据
+	 *        	姝屾洸淇℃伅鏁版嵁
 	 */
 	private function add_song_record($song) {
-		// 获取歌手信息
+		// 鑾峰彇姝屾墜淇℃伅
 		$singerdb = new \Home\Model\SingerModel ();
 		$singer = $singerdb->get_singer ( $song [0] ['singerid'] );
-		// 增加记录操作
+		// 澧炲姞璁板綍鎿嶄綔
 		$db = new \Home\Model\SonglistenrecordModel ();
 		$db->add_recoed ( $song [0] ['id'], $song [0] ['songname'], $singer [0] ['singername'] );
 	}
 
 	/**
-	 * 获取歌曲列表
-	 * @author xingzhi 2018年8月6日上午9:33:50
-	 * @param int $albumnId 专辑主键id
+	 * 鑾峰彇姝屾洸鍒楄〃
+	 * @author xingzhi 2018骞�8鏈�6鏃ヤ笂鍗�9:33:50
+	 * @param int $albumnId 涓撹緫涓婚敭id
 	 */
 	public function get_song_list($albumnId) {
 		$songdb = new SongModel ();
@@ -380,62 +380,62 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 上传图片
+	 * 涓婁紶鍥剧墖
 	 *
-	 * @author 邢志 2017年6月24日 下午4:19:15
+	 * @author 閭㈠織 2017骞�6鏈�24鏃� 涓嬪崍4:19:15
 	 */
 	public function upload_albumn() {
 		$singerid = get_url_param ( "sid" );
 		$albumname = get_url_param ( "albumname" );
-		$issueyear = get_url_param ( "issueyear" ); // 发行年份
+		$issueyear = get_url_param ( "issueyear" ); // 鍙戣骞翠唤
 		$issuetime = get_url_param ( "issuetime" );
-		$languages = get_url_param ( "languages" ); // 语言类型
-		$issuemonth = get_url_param ( "issuemonth" ); // 发行月份
+		$languages = get_url_param ( "languages" ); // 璇█绫诲瀷
+		$issuemonth = get_url_param ( "issuemonth" ); // 鍙戣鏈堜唤
 
 		if (empty ( $issuetime )) {
 			$issuetime = $issueyear . date ( '-m-d' );
 		}
 
-		// 原始文件名
+		// 鍘熷鏂囦欢鍚�
 		$original = $_FILES ['filedata'] ['name'];
-		// 临时图片路径
+		// 涓存椂鍥剧墖璺緞
 		$temp_img = $_FILES ['filedata'] ['tmp_name'];
-		// 图片大小
+		// 鍥剧墖澶у皬
 		//$img_size = $_FILES ['filedata'] ['size'];
-		// 文件扩展名
+		// 鏂囦欢鎵╁睍鍚�
 		$file_ex = get_file_ext ( $original );
-		// 文件名
+		// 鏂囦欢鍚�
 		$file_name = create_guid () . $file_ex;
 
 		$save_root = C ( 'SAVE_ROOT_IMAGE_MUSIC' );
 		$dir_path = '/' . date ( 'Ym' ) . '/';
-		// 创建不存在的文件夹
+		// 鍒涘缓涓嶅瓨鍦ㄧ殑鏂囦欢澶�
 		if (! is_dir ( $save_root . $dir_path )) {
 			mkdir ( $save_root . $dir_path, 0777, true );
 		}
-		// 调用Model层进行数据添加.
+		// 璋冪敤Model灞傝繘琛屾暟鎹坊鍔�.
 		$albumndb = new SingeralbumModel ();
 		$rs = $albumndb->add_album ( $albumname, $singerid, $issueyear, $issuemonth, $dir_path . $file_name, $issuetime, $languages );
 		$this->result ['code'] = $rs;
 		if ($rs > 0) {
 			$movers = move_uploaded_file ( $temp_img, $save_root . $dir_path . $file_name );
 			if ($movers) {
-				$this->result ['msg'] = '专辑【' . $albumname . '】上传成功.';
+				$this->result ['msg'] = '涓撹緫銆�' . $albumname . '銆戜笂浼犳垚鍔�.';
 			} else {
-				$this->result ['msg'] = '数据上传成功.封面图片移动失败.';
+				$this->result ['msg'] = '鏁版嵁涓婁紶鎴愬姛.灏侀潰鍥剧墖绉诲姩澶辫触.';
 			}
 		} else {
 			$this->result ['code'] = 0;
-			$this->result ['msg'] = $albumname . "数据上传失败";
+			$this->result ['msg'] = $albumname . "鏁版嵁涓婁紶澶辫触";
 		}
 
 		echo json_encode ( $this->result );
 	}
 
 	/**
-	 * 获取专辑列表
+	 * 鑾峰彇涓撹緫鍒楄〃
 	 *
-	 * @author 邢志 2017年6月24日 下午4:21:36
+	 * @author 閭㈠織 2017骞�6鏈�24鏃� 涓嬪崍4:21:36
 	 */
 	public function get_album_list() {
 		$singerId = get_url_param ( 'sid' );
@@ -448,9 +448,9 @@ class ApimusicController extends Controller {
 	}
 
 	/**
-	 * 获取歌手列表
+	 * 鑾峰彇姝屾墜鍒楄〃
 	 *
-	 * @author 邢志 2017年6月24日 下午4:55:23
+	 * @author 閭㈠織 2017骞�6鏈�24鏃� 涓嬪崍4:55:23
 	 */
 	public function get_singer_list() {
 		$singerdb = new SingerModel ();
@@ -459,37 +459,37 @@ class ApimusicController extends Controller {
 		echo get_url_param ( 'callback' ) . "(" . json_encode ( $this->result ) . ")";
 	}
 	/**
-	 * 添加歌手信息
-	 * @author 邢志 2017年6月24日 下午3:23:41
+	 * 娣诲姞姝屾墜淇℃伅
+	 * @author 閭㈠織 2017骞�6鏈�24鏃� 涓嬪崍3:23:41
 	 */
 	public function add_singer() {
 		$singername = trim ( get_url_param ( 'singername' ) );
 		if (empty ( $singername )) {
-			$this->result ['msg'] = '歌手名称必须填写.';
+			$this->result ['msg'] = '姝屾墜鍚嶇О蹇呴』濉啓.';
 		} else {
 			$gender = trim ( get_url_param ( 'gender' ) );
 			$region = trim ( get_url_param ( 'region' ) );
 			$singerdb = new SingerModel ();
 			$this->result ['code'] = $singerdb->add_singer ( $singername, $gender, $region );
 			if ($this->result ['code'] < 1) {
-				$this->result ['msg'] = '添加歌手' . $singername . '失败.';
+				$this->result ['msg'] = '娣诲姞姝屾墜' . $singername . '澶辫触.';
 			} else {
-				$this->result ['msg'] = '添加歌手' . $singername . '成功.';
+				$this->result ['msg'] = '娣诲姞姝屾墜' . $singername . '鎴愬姛.';
 			}
 		}
 		echo json_encode ( $this->result );
 	}
 	/**
-	 * 获取专辑列表
-	 * @author xingzhi 2018年8月5日上午11:13:24
-	 * @param int $albumId 专辑主键.
+	 * 鑾峰彇涓撹緫鍒楄〃
+	 * @author xingzhi 2018骞�8鏈�5鏃ヤ笂鍗�11:13:24
+	 * @param int $albumId 涓撹緫涓婚敭.
 	 */
 	public function get_sineralbum($albumId) {
 		$singeralbum = new SingeralbumModel ();
 		$result = $singeralbum->get_album_byid ( $albumId );
 		$this->result ['result'] = $result;
 		$this->result ['code'] = 0;
-		$this->result ['msg'] = '请求专辑接口成功.';
+		$this->result ['msg'] = '璇锋眰涓撹緫鎺ュ彛鎴愬姛.';
 		echo get_url_param ( 'callback' ) . "(" . json_encode ( $this->result ) . ")";
 	}
 }
