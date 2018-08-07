@@ -1,0 +1,141 @@
+[ 2017-07-17T20:49:21+08:00 ] 127.0.0.1 /reailwayinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-07-17 23:59:59' ORDER BY begintime DESC [ RunTime:0.0031s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000910s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000988s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001075s ]
+
+[ 2017-07-17T20:50:20+08:00 ] 127.0.0.1 /reailwayinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0068s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-07-17 23:59:59' ORDER BY begintime DESC [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009719s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2017-07-17T20:50:25+08:00 ] 127.0.0.1 /home/reailwayinfo/addticket
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008061s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000532s ]
+
+[ 2017-07-17T20:51:13+08:00 ] 127.0.0.1 /home/api/add_ticket?Amount=141&BAmount=&BeginTime=2017-07-11+08%3A34&BuyStation=%E9%94%A6%E5%B7%9E%E5%8D%97%E7%AB%99&EStation=%E5%8C%97%E4%BA%AC%E7%AB%99&Notes=&ReailwayCode=D12&SeatNum=13F&SStation=%E9%94%A6%E5%B7%9E%E5%8D%97%E7%AB%99&ReailwayNum=6&ReailwayType=%E5%8A%A8%E8%BD%A6&ReailwaySeatType=%E4%BA%8C%E7%AD%89%E5%BA%A7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0082s ]
+NOTIC: [8] Undefined index: SStation D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: EStation D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: BeginTime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: Amount D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: BAmount D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: Notes D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwayCode D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: SeatNum D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: BuyStation D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwayNum D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwayType D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwaySeatType D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0065s ]
+SQL: SELECT id, sstation, estation, addtime, begintime, 
+				amount, bamount, notes, reailwaycode, seatnum, 
+				buystation, ticketpic, reailwaynum, reailwaytype, reailwayseattype 
+				FROM reailwayinfo 
+				WHERE sstation = '锦州南站' 
+				AND estation = '北京站' 
+				AND reailwaycode = 'D12'  
+				AND begintime = '2017-07-11 08:34'  [ RunTime:0.0005s ]
+SQL: INSERT INTO `reailwayinfo` (`sstation`,`estation`,`addtime`,`begintime`,`amount`,`bamount`,`notes`,`reailwaycode`,`seatnum`,`buystation`,`ticketpic`,`reailwaynum`,`reailwaytype`,`reailwayseattype`) VALUES ('锦州南站','北京站','2017-07-17 20:51:13','2017-07-11 08:34','141','0','','D12','13F','锦州南站','','6','动车','二等座') [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2017-07-17T20:51:18+08:00 ] 127.0.0.1 /reailwayinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0071s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-07-17 23:59:59' ORDER BY begintime DESC [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008190s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008230s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+

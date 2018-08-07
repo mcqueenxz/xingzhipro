@@ -1,0 +1,780 @@
+[ 2017-06-07T17:19:20+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000019s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004899s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2017-06-07T17:20:14+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+ERR: 无法加载控制器:Index
+
+[ 2017-06-07T17:23:42+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+ERR: 无法加载控制器:Index
+
+[ 2017-06-07T17:24:18+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+ERR: 无法加载控制器:Index
+
+[ 2017-06-07T17:25:25+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000333s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:25:26+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:25:27+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:54+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:55+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:56+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000978s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:56+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001051s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:56+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:56+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:56+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:26:57+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:02+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:03+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:09+08:00 ] 192.168.1.101 /reailinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+ERR: 无法加载控制器:Reailinfo
+
+[ 2017-06-07T17:28:17+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:33+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:33+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:33+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:33+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:34+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:34+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:34+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:34+08:00 ] 192.168.1.101 /ReailwayInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:28:38+08:00 ] 192.168.1.101 /Reailwayinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+
+[ 2017-06-07T17:28:59+08:00 ] 192.168.1.101 /Reailwayinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+
+[ 2017-06-07T17:29:01+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+ERR: 无法加载控制器:ReailwayInfo
+
+[ 2017-06-07T17:29:08+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+
+[ 2017-06-07T17:29:09+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000819s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001892s ]
+
+[ 2017-06-07T17:29:19+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0009s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-06-07 23:59:59' ORDER BY begintime DESC [ RunTime:0.0585s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] file_get_contents(./RailwaySite/Home/View/Public/foot.html): failed to open stream: No such file or directory E:\www\phpwebsite\ThinkPHP\Library\Think\Template.class.php 第 696 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021794s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001203s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001294s ]
+
+[ 2017-06-07T17:29:25+08:00 ] 192.168.1.101 /home/reailwayinfo/addticket
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000409s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007989s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008059s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000899s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001071s ]
+
+[ 2017-06-07T17:31:52+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-06-07 23:59:59' ORDER BY begintime DESC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007055s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007108s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000492s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2017-06-07T17:31:56+08:00 ] 192.168.1.101 /oicq/oicqlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+ERR: 无法加载控制器:Oicq
+
+[ 2017-06-07T17:32:01+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2014-01-01&etime=2014-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2014-01-01 00:00:00' and '2014-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007157s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000578s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+
+[ 2017-06-07T17:32:01+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2015-01-01&etime=2015-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000258s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2015-01-01 00:00:00' and '2015-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0264s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000579s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2017-06-07T17:32:02+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2016-01-01&etime=2016-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0006s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2016-01-01 00:00:00' and '2016-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008343s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2017-06-07T17:32:02+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005977s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2017-06-07T17:32:03+08:00 ] 192.168.1.101 /home/reailwayinfo/addticket
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009702s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009755s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2017-06-07T17:33:22+08:00 ] 192.168.1.101 /home/api/add_ticket?Amount=141&BAmount=&BeginTime=2017-06-06+13%3A37&BuyStation=%E5%8C%97%E4%BA%AC%E7%AB%99&EStation=%E9%94%A6%E5%B7%9E%E5%8D%97%E7%AB%99&Notes=&ReailwayCode=D11&SeatNum=15F&SStation=%E5%8C%97%E4%BA%AC%E7%AB%99&ReailwayNum=11&ReailwayType=%E5%8A%A8%E8%BD%A6&ReailwaySeatType=%E4%BA%8C%E7%AD%89%E5%BA%A7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+ERR: 无法加载控制器:Api
+
+[ 2017-06-07T17:33:31+08:00 ] 192.168.1.101 /home/api/add_ticket?Amount=141&BAmount=&BeginTime=2017-06-06+13%3A37&BuyStation=%E5%8C%97%E4%BA%AC%E7%AB%99&EStation=%E9%94%A6%E5%B7%9E%E5%8D%97%E7%AB%99&Notes=&ReailwayCode=D11&SeatNum=15F&SStation=%E5%8C%97%E4%BA%AC%E7%AB%99&ReailwayNum=11&ReailwayType=%E5%8A%A8%E8%BD%A6&ReailwaySeatType=%E4%BA%8C%E7%AD%89%E5%BA%A7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+ERR: 无法加载控制器:Api
+
+[ 2017-06-07T17:34:36+08:00 ] 192.168.1.101 /home/api/add_ticket?Amount=141&BAmount=&BeginTime=2017-06-06+13%3A37&BuyStation=%E5%8C%97%E4%BA%AC%E7%AB%99&EStation=%E9%94%A6%E5%B7%9E%E5%8D%97%E7%AB%99&Notes=&ReailwayCode=D11&SeatNum=15F&SStation=%E5%8C%97%E4%BA%AC%E7%AB%99&ReailwayNum=11&ReailwayType=%E5%8A%A8%E8%BD%A6&ReailwaySeatType=%E4%BA%8C%E7%AD%89%E5%BA%A7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: SStation E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: EStation E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: BeginTime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: Amount E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: BAmount E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: Notes E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwayCode E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: SeatNum E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: BuyStation E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwayNum E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwayType E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: ReailwaySeatType E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+SQL: SELECT id, sstation, estation, addtime, begintime, 
+				amount, bamount, notes, reailwaycode, seatnum, 
+				buystation, ticketpic, reailwaynum, reailwaytype, reailwayseattype 
+				FROM reailwayinfo 
+				WHERE sstation = '北京站' 
+				AND estation = '锦州南站' 
+				AND reailwaycode = 'D11'  
+				AND begintime = '2017-06-06 13:37'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `reailwayinfo` (`sstation`,`estation`,`addtime`,`begintime`,`amount`,`bamount`,`notes`,`reailwaycode`,`seatnum`,`buystation`,`ticketpic`,`reailwaynum`,`reailwaytype`,`reailwayseattype`) VALUES ('北京站','锦州南站','2017-06-07 17:34:36','2017-06-06 13:37','141','0','','D11','15F','北京站','','11','动车','二等座') [ RunTime:0.0946s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000531s ]
+
+[ 2017-06-07T17:34:42+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006700s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006743s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000767s ]
+
+[ 2017-06-07T17:35:25+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0007s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007398s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007439s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2017-06-07T17:36:02+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000563s ]
+
+[ 2017-06-07T17:36:03+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000415s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000525s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2017-06-07T17:36:05+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2016-01-01&etime=2016-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2016-01-01 00:00:00' and '2016-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006708s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000819s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000895s ]
+
+[ 2017-06-07T17:36:06+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2015-01-01&etime=2015-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2015-01-01 00:00:00' and '2015-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006417s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2017-06-07T17:36:07+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006330s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000523s ]
+
+[ 2017-06-07T17:37:01+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000406s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0004s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006320s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2017-06-07T17:37:06+08:00 ] 192.168.1.101 /home/reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+NOTIC: [8] Undefined index: stime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www\phpwebsite\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0005s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008546s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008617s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000756s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000837s ]
+

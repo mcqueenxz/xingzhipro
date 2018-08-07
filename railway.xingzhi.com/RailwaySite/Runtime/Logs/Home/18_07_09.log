@@ -1,0 +1,94 @@
+[ 2018-07-09T20:41:02+08:00 ] 192.168.0.105 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0051s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2018-01-01 00:00:00' and '2018-07-09 23:59:59' ORDER BY begintime DESC [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063572s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063629s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016330s ]
+
+[ 2018-07-09T20:41:03+08:00 ] 192.168.0.105 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+
+[ 2018-07-09T20:41:04+08:00 ] 192.168.0.105 /reailwayinfo/index?stime=2016-01-01&etime=2016-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0051s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2016-01-01 00:00:00' and '2016-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007187s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007228s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000800s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000834s ]
+
+[ 2018-07-09T20:41:04+08:00 ] 192.168.0.105 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+
+[ 2018-07-09T20:41:06+08:00 ] 192.168.0.105 /reailwayinfo/index?stime=2017-01-01&etime=2017-12-31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+NOTIC: [8] Undefined index: stime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime D:\www\phpweb\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0053s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2017-01-01 00:00:00' and '2017-12-31 23:59:59' ORDER BY begintime DESC [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006883s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006925s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000797s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000831s ]
+
+[ 2018-07-09T20:41:06+08:00 ] 192.168.0.105 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+

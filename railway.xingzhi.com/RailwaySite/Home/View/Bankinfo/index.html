@@ -1,0 +1,68 @@
+<include file="Public:header" title="银行卡信息" />
+<style type="text/css">
+    .banktab { width:100%; line-height:32px; }
+    .banktab thead{ font-weight:bold;}
+    .banktab td { text-align:center;}
+    .banktab td.t1 { width:20%;}
+</style>
+</head>
+<body>
+    <div class="nav">
+        <div class="lst">
+            <a href="javascript:;" class="core">银行卡</a>
+        </div>
+    </div>
+
+    <div class="small_nav">
+        <a href="/">首页</a>&gt; 银行卡
+    </div>
+
+    <div class="select_type">
+        <a href="/bankinfo/addbankinfo" class="popup-add" id="search_pro">新增银行卡</a>
+    </div>
+
+    <div class="picframe">
+    	<!-- Contents List -->
+        <div class="parea" id="contlist">
+        
+        	<table class="banktab">
+                <thead>
+                    <tr>
+                        <td class="t1">银行名称</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <volist name="bankinfo" id="vo">
+                    <tr>
+                        <td>{$vo.bankname}</td>
+                        <td>
+                            <a href="javascript:;">增加新卡</a>
+                        </td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+        
+        </div>
+        <!-- Pager Index -->
+        <input type="hidden" value="0" id="hidPage" />
+    </div>
+
+	<script type="text/javascript">
+        $(document).ready(function () {
+            //加载网页
+            $('.popup-add').magnificPopup({
+                disableOn: 800,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: true
+            });
+        });
+	</script>
+
+    <include file="Public:foot" syear="2007" eyear="2017" />
+</body>
+</html>

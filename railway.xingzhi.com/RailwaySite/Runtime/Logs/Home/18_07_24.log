@@ -1,0 +1,36 @@
+[ 2018-07-24T14:36:45+08:00 ] 192.168.1.101 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015527s ]
+NOTIC: [8] Undefined index: stime E:\www2\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: stime E:\www2\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: stime E:\www2\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+NOTIC: [8] Undefined index: etime E:\www2\railway.xingzhi.com\Common\Common\function.php 第 64 行.
+NOTIC: [8] Undefined index: etime E:\www2\railway.xingzhi.com\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined index: etime E:\www2\railway.xingzhi.com\Common\Common\function.php 第 68 行.
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `reailwayinfo` [ RunTime:0.0017s ]
+SQL: SELECT * FROM reailwayinfo WHERE begintime BETWEEN '2018-01-01 00:00:00' and '2018-07-24 23:59:59' ORDER BY begintime DESC [ RunTime:0.0069s ]
+NOTIC: [8] Undefined offset: 39 E:\www2\railway.xingzhi.com\Common\Common\function.php 第 118 行.
+NOTIC: [8] Undefined offset: 1 E:\www2\railway.xingzhi.com\Common\Common\function.php 第 118 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055541s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055604s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.010581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005639s ]
+
+[ 2018-07-24T14:36:45+08:00 ] 192.168.1.101 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+

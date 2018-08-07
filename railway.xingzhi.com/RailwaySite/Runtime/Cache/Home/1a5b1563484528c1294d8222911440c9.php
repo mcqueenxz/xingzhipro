@@ -1,0 +1,226 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>火车票统计</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" />
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <script type="text/javascript" src="/layer/extend/layer.ext.js"></script>
+    <style type="text/css">
+        body { font-family: 'Microsoft YaHei', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+        a.color_while { color: #FFF; }
+        a.color_while:hover { color: #ffd800; }
+        a.color_garpwhile { color: #a3a1a1; }
+        .top_header { position: fixed; top: 0; z-index: 100; background: #333; height: 5rem; color: #FFF; line-height: 5rem; width: 100%; }
+        .bottom_foot { position: fixed; bottom: 0; z-index: 100; width: 100%; background: #333; height: 5rem; color: #FFF; line-height: 5rem; }
+
+        .table-vertical-align { vertical-align: middle !important; }
+    </style>
+</head>
+<body>
+
+    <div style="padding:1rem; padding-bottom:5.5rem;">
+
+        <table class="table table-bordered table-condensed table-responsive">
+            <tbody>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>起始站:</label></td>
+                    <td>
+                        <input type="text" id="txtSStation" name="txtSStation" class="form-control" placeholder="请输入火车起始站名称" />
+                        <ul class="ticketSty list-inline"> </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>终到站:</label></td>
+                    <td>
+                        <input type="text" id="txtEStation" name="txtEStation" class="form-control" placeholder="请输入火车终到站名称" />
+                        <ul class="ticketStyEnd list-inline"> </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>发车时间:</label></td>
+                    <td>
+                        <input class="Wdate form-control" type="text" id="txtBeginTime" name="txtBeginTime" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm',minDate:'1996-01-01',maxDate:'%y-%M-%d'})">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>票价金额:</label></td>
+                    <td>
+                        <input type="text" id="txtAmount" name="txtAmount" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>附加票价金额:</label></td>
+                    <td>
+                        <input type="text" id="txtBAmount" name="txtBAmount" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>备注说明:</label></td>
+                    <td>
+                        <textarea class="form-control" name="txtNotes" id="txtNotes"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>火车车次:</label></td>
+                    <td>
+                        <input class="form-control" type="text" id="txtReailwayCode" name="txtReailwayCode" />
+                        <span class="text-muted">例如：K39</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>火车类型:</label></td>
+                    <td>
+                        <input class="form-control" type="text" id="txtReailwayType" readonly="readonly" name="txtReailwayType" />
+                        <ul class="list-inline">
+                            <li><a class="color_garpwhile" href="javascript:;">高铁/城际</a></li>
+                            <li><a class="color_garpwhile" href="javascript:;">动车</a></li>
+                            <li><a class="color_garpwhile" href="javascript:;">直达</a></li>
+                            <li><a class="color_garpwhile" href="javascript:;">特快</a></li>
+                            <li><a class="color_garpwhile" href="javascript:;">快速</a></li>
+                            <li><a class="color_garpwhile" href="javascript:;">其它</a></li>
+                        </ul>
+                        <script type="text/javascript">
+                            $(".list-inline li").find("a").each(function (i) {
+                                $(this).click(function () {
+                                    $("#txtReailwayType").val($(this).html());
+                                });
+                            });
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>车厢/座位/座位类型:</label></td>
+                    <td>
+                        <form class="form-inline">
+                            车厢:<input type="text" class="form-control" id="txtReailwayNum" name="txtReailwayNum" /> 
+                            座位:<input type="text" class="form-control" id="txtSeatNum" name="txtSeatNum" />
+                            座位类型:<input type="text" class="form-control" id="txtReailwaySeatType" name="txtReailwaySeatType" />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"><label>车票售卖站:</label></td>
+                    <td>
+                        <input class="form-control" type="text" id="txtBuyStation" name="txtBuyStation" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-2 text-right table-vertical-align"> </td>
+                    <td>
+                        <input type="button" class="btn btn-primary" id="btnSubmit" name="btnSubmit" value="提 交" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script type="text/javascript">
+        function get_station(purl, ptype, showVid, objId) {
+            $.ajax({
+                url: purl,
+                type: ptype,
+                async: true,
+                data: {},
+                timeout: 5000,
+                dataType: 'json',//json/xml/html/script/jsonp/text
+                beforeSend: function (xhr) {
+                    //layer.msg(xhr);
+                },
+                success: function (data, status, XHR) {
+                    var StationNameArray = new Array();
+                    $.each(data, function (i, k) {
+                        StationNameArray.push(data[i].stationname);
+                    });
+                    var backStation = $(showVid);
+                    for (var i = 0; i < StationNameArray.length; i++) {
+                        $('<li><a class="color_garpwhile" href="javascript:;">' + StationNameArray[i] + '</a></li>').appendTo($(backStation));
+                    }
+                    var aArray = backStation.find("a");
+                    for (var j = 0; j < aArray.length; j++) {
+                        //给遍历过的a标签添加点击事件.
+                        aArray.eq(j).click(function () {
+                            $(objId).val($(this).html());
+                        });
+                    }
+                    layer.msg(XHR);
+
+                },
+                error: function (xhr, status) {
+                    layer.msg(status);
+                },
+                complete: function () { }
+            });
+        }
+        $("#btnSubmit").click(function () {
+
+            var SStation = $("#txtSStation").val();
+            var EStation = $("#txtEStation").val();
+            var Amount = $("#txtAmount").val();
+            var ReailwayType = $("#txtReailwayType").val();
+            var amReg = new RegExp(/^[0-9]+\.{0,1}[0-9]{0,2}$/);
+
+            if (SStation == '') {
+                layer.alert('起始站不能为空.');
+                return;
+            }
+            if (EStation == '') {
+                layer.alert('终到站不能为空.');
+                return;
+            }
+            if ($.trim(SStation) == $.trim(EStation)) {
+                layer.alert('起始站和终到站不能一样.');
+                return;
+            }
+            if (Amount == '') {
+                layer.alert('金额不能为空.');
+                return;
+            }
+            if (!amReg.test(Amount)) {
+                layer.alert('金额输入错误.');
+                return;
+            }
+            if (ReailwayType == '') {
+                layer.alert('请选择车次.');
+                return;
+            }
+            $.get("/api/add_ticket",
+                {
+                    Amount: $("#txtAmount").val(),
+                    BAmount: $("#txtBAmount").val(),
+                    BeginTime: $("#txtBeginTime").val(),
+                    BuyStation: $("#txtBuyStation").val(),
+                    EStation: EStation,
+                    Notes: $("#txtNotes").val(),
+                    ReailwayCode: $("#txtReailwayCode").val(),
+                    SeatNum: $("#txtSeatNum").val(),
+                    SStation: $("#txtSStation").val(),
+                    ReailwayNum: $("#txtReailwayNum").val(),
+                    ReailwayType: $("#txtReailwayType").val(),
+                    ReailwaySeatType: $("#txtReailwaySeatType").val()
+                },
+            function (data) {
+                var jsonVal = eval("(" + data + ")");
+                layer.msg(jsonVal.msg);
+                if (jsonVal.result > 0) {
+                    setTimeout(function () {
+                        window.open(window.parent.document.location.href, '_top');
+                    }, 1000);
+                }
+            });
+        });
+        $(document).ready(function () {
+            get_station("/api/get_selectorstation", "post", ".ticketSty", "#txtSStation");
+            get_station("/api/get_selectorstation", "post", ".ticketStyEnd", "#txtEStation");
+        });
+    </script>
+
+</body>
+</html>
